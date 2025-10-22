@@ -37,12 +37,3 @@
 
 ## Logging & tracking
 - Local experiment outputs go to `outputs/`.
-- WandB logs are stored in `wandb/` (runs captured from previous experiments).
-
-## Notes & tips
-- Confirm `config_cv.yaml` paths (e.g., `data.source_dirs`, `data.train_dir`, `outputs.base_dir`) before running.
-- If using local pretrained weights, set `model_params.local_weights_dir` in `config_cv.yaml`.
-- If data preparation is slow or raises unreadable file warnings, `data_setup.py` logs corrupted files and skips them.
-
-## Contacts / authorship
-Repository owner: see metadata in WandB config files under `wandb/files/config.yaml`.
