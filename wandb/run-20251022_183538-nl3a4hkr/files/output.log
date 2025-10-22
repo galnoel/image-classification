@@ -1,0 +1,16 @@
+2025-10-22 18:35:42,409 - INFO - Using device: cuda
+2025-10-22 18:35:42,410 - INFO - Starting data preparation...
+2025-10-22 18:35:42,537 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-22 18:35:42,542 - INFO - Creating PyTorch DataLoaders...
+2025-10-22 18:35:42,603 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-22 18:35:42,604 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-22 18:35:42,605 - INFO - Initializing model: efficientnet_b0
+C:\Users\gemastik18\final\image-classification\run_cv_pipeline.py:129: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load(local_weights_path))
+2025-10-22 18:35:42,823 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-22 18:35:42,824 - INFO - Loss function and optimizer initialized.
+2025-10-22 18:35:42,826 - INFO - Starting model training...
+2025-10-22 18:35:42,826 - INFO - Starting training for 5 epochs...
+Training: 100%|██████████████████████████████████████████████████████████████████████| 625/625 [00:42<00:00, 14.61it/s]
+Training: 100%|█████████████████████████████████████████████████████████████████████▊| 623/625 [00:41<00:00, 27.00it/s]
+Testing :   0%|                                                                                | 0/157 [00:00<?, ?it/s]

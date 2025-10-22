@@ -1,0 +1,36 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.11.14",
+  "startedAt": "2025-10-22T10:05:16.342932Z",
+  "program": "C:\\Users\\gemastik18\\final\\image-classification\\run_cv_pipeline.py",
+  "codePath": "run_cv_pipeline.py",
+  "codePathLocal": "run_cv_pipeline.py",
+  "email": "galnoelpeterrindengan@gmail.com",
+  "root": "C:\\Users\\gemastik18\\final\\image-classification",
+  "host": "LAPTOP-9DKRBJRM",
+  "executable": "C:\\Users\\gemastik18\\miniconda3\\envs\\final\\python.exe",
+  "cpu_count": 14,
+  "cpu_count_logical": 20,
+  "gpu": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "510744596480",
+      "used": "434334150656"
+    }
+  },
+  "memory": {
+    "total": "34049417216"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+      "memoryTotal": "8589934592",
+      "cudaCores": 5888,
+      "architecture": "Ampere",
+      "uuid": "GPU-57b14243-36ba-bd00-1fd2-2fe3524577a2"
+    }
+  ],
+  "cudaVersion": "12.7",
+  "writerId": "47mpm3tufvgw9vhcyu2kaatxf9vtcjgw"
+}

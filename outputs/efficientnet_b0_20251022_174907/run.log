@@ -1,0 +1,19 @@
+2025-10-22 17:49:07,606 - INFO - Configuration loaded and logging set up.
+2025-10-22 17:49:07,606 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251022_174907
+2025-10-22 17:49:07,630 - INFO - Using device: cuda
+2025-10-22 17:49:07,632 - INFO - Starting data preparation...
+2025-10-22 17:49:07,688 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-22 17:49:07,689 - INFO - Creating PyTorch DataLoaders...
+2025-10-22 17:49:07,771 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-22 17:49:07,772 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-22 17:49:07,772 - INFO - Initializing model: efficientnet_b0
+2025-10-22 17:49:07,988 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-22 17:49:07,989 - INFO - Loss function and optimizer initialized.
+2025-10-22 17:49:07,990 - INFO - Starting model training...
+2025-10-22 17:49:07,990 - INFO - Starting training for 5 epochs...
+2025-10-22 17:50:52,671 - INFO - Epoch: 01 | Train Loss: 0.2689 | Train Acc: 0.8827 | Test Loss: 0.0767 | Test Acc: 0.9747
+2025-10-22 17:50:52,760 - INFO - Model saved to outputs\efficientnet_b0_20251022_174907\best_model.pth
+2025-10-22 17:50:52,761 - INFO - New best model saved to outputs\efficientnet_b0_20251022_174907/best_model.pth (Test Acc: 0.9747)
+2025-10-22 17:52:45,810 - INFO - Epoch: 02 | Train Loss: 0.2308 | Train Acc: 0.8964 | Test Loss: 0.0652 | Test Acc: 0.9785
+2025-10-22 17:52:45,849 - INFO - Model saved to outputs\efficientnet_b0_20251022_174907\best_model.pth
+2025-10-22 17:52:45,849 - INFO - New best model saved to outputs\efficientnet_b0_20251022_174907/best_model.pth (Test Acc: 0.9785)

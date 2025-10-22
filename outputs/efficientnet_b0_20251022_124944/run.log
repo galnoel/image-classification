@@ -1,0 +1,14 @@
+2025-10-22 12:49:44,820 - INFO - Configuration loaded and logging set up.
+2025-10-22 12:49:44,823 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251022_124944
+2025-10-22 12:49:44,843 - INFO - Using device: cuda
+2025-10-22 12:49:44,845 - INFO - Starting data preparation...
+2025-10-22 12:49:44,847 - INFO - No pre-existing split data or incomplete. Starting data preparation...
+2025-10-22 12:49:44,847 - INFO - Collecting files from source directories: ['data/PetImages/Cat', 'data/PetImages/Dog']
+2025-10-22 12:49:44,848 - INFO - Found class: Cat in 'data\PetImages\Cat'
+2025-10-22 12:49:44,939 - INFO - Found class: Dog in 'data\PetImages\Dog'
+2025-10-22 12:49:44,958 - INFO - Splitting combined data (test ratio: 0.2) and copying files...
+2025-10-22 12:55:19,320 - INFO - Data splitting complete. Processed data saved to: data_processed
+2025-10-22 12:55:19,321 - INFO - Creating PyTorch DataLoaders...
+2025-10-22 12:55:19,385 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-22 12:55:19,393 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-22 12:55:19,394 - INFO - Initializing model: efficientnet_b0

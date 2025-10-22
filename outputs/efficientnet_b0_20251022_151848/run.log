@@ -1,0 +1,32 @@
+2025-10-22 15:18:48,773 - INFO - Configuration loaded and logging set up.
+2025-10-22 15:18:48,773 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251022_151848
+2025-10-22 15:18:48,801 - INFO - Using device: cuda
+2025-10-22 15:18:48,801 - INFO - Starting data preparation...
+2025-10-22 15:18:48,916 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-22 15:18:48,917 - INFO - Creating PyTorch DataLoaders...
+2025-10-22 15:18:48,975 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-22 15:18:48,976 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-22 15:18:48,977 - INFO - Initializing model: efficientnet_b0
+2025-10-22 15:18:49,214 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-22 15:18:49,215 - INFO - Loss function and optimizer initialized.
+2025-10-22 15:18:49,215 - INFO - Starting model training...
+2025-10-22 15:18:49,215 - INFO - Starting training for 5 epochs...
+2025-10-22 15:21:28,035 - INFO - Epoch: 01 | Train Loss: 0.2690 | Train Acc: 0.8802 | Test Loss: 0.0793 | Test Acc: 0.9729
+2025-10-22 15:21:28,074 - INFO - Model saved to outputs\efficientnet_b0_20251022_151848\best_model.pth
+2025-10-22 15:21:28,075 - INFO - New best model saved to outputs\efficientnet_b0_20251022_151848/best_model.pth (Test Acc: 0.9729)
+2025-10-22 15:22:45,850 - INFO - Epoch: 02 | Train Loss: 0.2442 | Train Acc: 0.8913 | Test Loss: 0.0679 | Test Acc: 0.9767
+2025-10-22 15:22:45,946 - INFO - Model saved to outputs\efficientnet_b0_20251022_151848\best_model.pth
+2025-10-22 15:22:45,947 - INFO - New best model saved to outputs\efficientnet_b0_20251022_151848/best_model.pth (Test Acc: 0.9767)
+2025-10-22 15:23:58,760 - INFO - Epoch: 03 | Train Loss: 0.2301 | Train Acc: 0.8953 | Test Loss: 0.0663 | Test Acc: 0.9771
+2025-10-22 15:23:58,801 - INFO - Model saved to outputs\efficientnet_b0_20251022_151848\best_model.pth
+2025-10-22 15:23:58,801 - INFO - New best model saved to outputs\efficientnet_b0_20251022_151848/best_model.pth (Test Acc: 0.9771)
+2025-10-22 15:25:04,507 - INFO - Epoch: 04 | Train Loss: 0.2281 | Train Acc: 0.8968 | Test Loss: 0.0628 | Test Acc: 0.9781
+2025-10-22 15:25:04,589 - INFO - Model saved to outputs\efficientnet_b0_20251022_151848\best_model.pth
+2025-10-22 15:25:04,590 - INFO - New best model saved to outputs\efficientnet_b0_20251022_151848/best_model.pth (Test Acc: 0.9781)
+2025-10-22 15:26:20,173 - INFO - Epoch: 05 | Train Loss: 0.2289 | Train Acc: 0.9001 | Test Loss: 0.0643 | Test Acc: 0.9759
+2025-10-22 15:26:20,173 - INFO - Training process finished.
+2025-10-22 15:26:20,175 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-22 15:26:45,165 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251022_151848/confusion_matrix.png
+2025-10-22 15:26:45,166 - INFO - Training complete.
+2025-10-22 15:26:45,167 - INFO - Report saved to outputs\efficientnet_b0_20251022_151848\results_report.pkl
+2025-10-22 15:26:45,169 - INFO - Final performance report saved to outputs\efficientnet_b0_20251022_151848/results_report.pkl

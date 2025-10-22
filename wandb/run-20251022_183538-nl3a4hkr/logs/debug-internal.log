@@ -1,0 +1,81 @@
+{"time":"2025-10-22T18:35:41.3548161+08:00","level":"INFO","msg":"stream: starting","core version":"0.22.2"}
+{"time":"2025-10-22T18:35:41.8585059+08:00","level":"INFO","msg":"stream: created new stream","id":"nl3a4hkr"}
+{"time":"2025-10-22T18:35:41.8585059+08:00","level":"INFO","msg":"handler: started","stream_id":"nl3a4hkr"}
+{"time":"2025-10-22T18:35:41.8722228+08:00","level":"INFO","msg":"stream: started","id":"nl3a4hkr"}
+{"time":"2025-10-22T18:35:41.8722228+08:00","level":"INFO","msg":"sender: started","stream_id":"nl3a4hkr"}
+{"time":"2025-10-22T18:35:41.8722228+08:00","level":"INFO","msg":"writer: started","stream_id":"nl3a4hkr"}
+{"time":"2025-10-22T18:36:42.2612044+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:36:57.2614431+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:36:57.7848192+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:36:59.7991654+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:37:04.449765+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:37:12.2613813+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:37:13.5171884+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:37:27.2614228+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:37:31.5561255+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:37:42.261039+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:37:57.2611969+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:38:04.2376092+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:38:12.2613508+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:38:27.2613334+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:38:42.260857+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:38:57.2614286+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:39:04.241196+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:39:12.2610772+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:39:27.2613404+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:39:42.2612071+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:39:57.2609449+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:40:04.2445473+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:40:12.2607941+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:40:27.2609349+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:40:42.2608768+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:40:57.2614111+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:41:04.2481793+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:41:12.2610788+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:41:27.2610511+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:41:42.260819+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:41:57.2612992+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:42:04.2516351+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:42:12.2609989+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:42:27.2615698+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:42:42.2611318+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:42:57.2613429+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:43:04.2553971+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:43:12.26128+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:43:27.2611936+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:43:42.2614959+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:43:57.2614435+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:44:04.2602158+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:44:12.2619377+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:44:27.2616729+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:44:42.2609612+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:44:57.2612468+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:45:04.2667166+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/galnoel-universitas-sam-ratulangi/image-classification/nl3a4hkr/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-10-22T18:45:12.2610995+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:45:27.2612497+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:45:42.2612115+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:45:57.2616546+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:46:12.2613998+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:46:27.2614519+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:46:42.2615549+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:46:57.2612783+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:47:12.26131+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:47:27.2616584+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:47:42.2616667+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:47:57.2613249+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:48:12.261163+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:48:27.2615876+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:48:42.2619721+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:48:57.261792+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:49:12.2621645+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:49:27.2612101+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:49:42.2613056+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:49:57.2611524+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:50:12.2610018+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:50:27.2613614+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:50:42.2611654+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:50:57.2616923+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:51:12.2612277+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:51:27.2616926+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:51:42.2613452+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}
+{"time":"2025-10-22T18:51:57.2611977+08:00","level":"ERROR","msg":"monitor: error sampling metrics: process does not exist"}

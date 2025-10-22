@@ -1,0 +1,84 @@
+_wandb:
+    value:
+        cli_version: 0.22.2
+        e:
+            47mpm3tufvgw9vhcyu2kaatxf9vtcjgw:
+                codePath: run_cv_pipeline.py
+                codePathLocal: run_cv_pipeline.py
+                cpu_count: 14
+                cpu_count_logical: 20
+                cudaVersion: "12.7"
+                disk:
+                    /:
+                        total: "510744596480"
+                        used: "434334150656"
+                email: galnoelpeterrindengan@gmail.com
+                executable: C:\Users\gemastik18\miniconda3\envs\final\python.exe
+                gpu: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 5888
+                      memoryTotal: "8589934592"
+                      name: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+                      uuid: GPU-57b14243-36ba-bd00-1fd2-2fe3524577a2
+                host: LAPTOP-9DKRBJRM
+                memory:
+                    total: "34049417216"
+                os: Windows-10-10.0.26100-SP0
+                program: C:\Users\gemastik18\final\image-classification\run_cv_pipeline.py
+                python: CPython 3.11.14
+                root: C:\Users\gemastik18\final\image-classification
+                startedAt: "2025-10-22T10:05:16.342932Z"
+                writerId: 47mpm3tufvgw9vhcyu2kaatxf9vtcjgw
+        m: []
+        python_version: 3.11.14
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.11.14
+            "5": 0.22.2
+            "8":
+                - 3
+            "12": 0.22.2
+            "13": windows-amd64
+data:
+    value:
+        source_dirs:
+            - data/PetImages/Cat
+            - data/PetImages/Dog
+        test_dir: data_processed/test
+        test_split_ratio: 0.2
+        train_dir: data_processed/train
+data_params:
+    value:
+        batch_size: 32
+        image_size: 224
+        num_workers: 4
+model_params:
+    value:
+        name: efficientnet_b0
+        pretrained: true
+outputs:
+    value:
+        base_dir: outputs
+        cm_plot_path: outputs\efficientnet_b0_20251022_180515/confusion_matrix.png
+        log_file: outputs\efficientnet_b0_20251022_180515/run.log
+        model_path: outputs\efficientnet_b0_20251022_180515/best_model.pth
+        report_path: outputs\efficientnet_b0_20251022_180515/results_report.pkl
+train_params:
+    value:
+        epochs: 5
+        learning_rate: 0.001

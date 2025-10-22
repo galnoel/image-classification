@@ -1,0 +1,13 @@
+2025-10-22 18:35:37,577 - INFO - Configuration loaded and logging set up.
+2025-10-22 18:35:37,578 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251022_183537
+2025-10-22 18:35:42,409 - INFO - Using device: cuda
+2025-10-22 18:35:42,410 - INFO - Starting data preparation...
+2025-10-22 18:35:42,537 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-22 18:35:42,542 - INFO - Creating PyTorch DataLoaders...
+2025-10-22 18:35:42,603 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-22 18:35:42,604 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-22 18:35:42,605 - INFO - Initializing model: efficientnet_b0
+2025-10-22 18:35:42,823 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-22 18:35:42,824 - INFO - Loss function and optimizer initialized.
+2025-10-22 18:35:42,826 - INFO - Starting model training...
+2025-10-22 18:35:42,826 - INFO - Starting training for 5 epochs...

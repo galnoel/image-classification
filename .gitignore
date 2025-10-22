@@ -1,0 +1,10 @@
+pretrained_models/
+data/
+data_processed/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+*.pth
+*.zip
