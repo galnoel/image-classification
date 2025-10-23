@@ -173,60 +173,74 @@ def main():
 
     logging.info("Loss function and optimizer initialized.")
 
+    logging.info("--- Starting Stage 1: Feature Extraction ---")
+    
     # 7. Start Training
-    logging.info("Starting model training...")
-    results = train.train(
+    results_stage1 = train.train(
         cfg=cfg,
         model=model,
         train_loader=train_loader,
         test_loader=test_loader,
         loss_fn=loss_fn,
         optimizer=optimizer,
+        # scheduler=None, # No scheduler for stage 1 in this setup
         device=device,
-        class_names=class_names # Pass class_names for confusion matrix
+        class_names=class_names
     )
-    logging.info("Stage 1 complete. Best model from this stage is saved.")    # -----------------------------------------------------------------
-    # STAGE 2: FINE-TUNING - The new code you add
-    # -----------------------------------------------------------------
+    logging.info("Stage 1 (Feature Extraction) complete.")
+
+    # Save reports and plots for Stage 1
+    utils.save_report(results_stage1, cfg['outputs']['report_path'])
+    utils.plot_and_save_curves(results_stage1, cfg['outputs']['training_curves_plot_path'])
+
+
+    # =================================================================
+    # STAGE 2: FINE-TUNING
+    # =================================================================
     logging.info("--- Starting Stage 2: Fine-Tuning ---")
 
-    # 1. Unfreeze the top layers of the model.
-    #    For EfficientNet, we can unfreeze the last few blocks in model.features
-    for param in model.features[-3:].parameters():
-        param.requires_grad = True
-    logging.info("Unfroze the top layers of the model.")
+    # 1. Load the best model from Stage 1 to continue training
+    best_model_path_stage1 = cfg['outputs']['model_path']
+    model.load_state_dict(torch.load(best_model_path_stage1, weights_only=True))
+    logging.info(f"Loaded best model from Stage 1: {best_model_path_stage1}")
 
-    # 2. Create a new optimizer with a much lower learning rate.
-    #    It's important that this optimizer now sees the newly unfrozen parameters.
-    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
-    logging.info("Created new optimizer for fine-tuning with learning rate: 0.0001")
+    # 2. Unfreeze the top layers of the model.
+    if cfg['model_params']['name'] == 'efficientnet_b0':
+        for param in model.features[-3:].parameters(): # Unfreeze last 3 blocks for EfficientNet
+            param.requires_grad = True
+    else: # For ResNets, you might unfreeze layer4
+        for param in model.layer4.parameters():
+            param.requires_grad = True
+    logging.info("Unfroze the top layers of the model for fine-tuning.")
+
+    # 3. Create a new optimizer for fine-tuning with a lower learning rate.
+    finetune_lr = cfg['train_params'].get('finetune_learning_rate', 1e-4) # Get from config or use default
+    optimizer = torch.optim.AdamW(model.parameters(), lr=finetune_lr)
+    logging.info(f"Created new AdamW optimizer for fine-tuning with learning rate: {finetune_lr}")
     
-    # 3. Modify config for the next training run (optional but good practice)
-    #    You'll want to save the final fine-tuned model to a different file.
-    cfg['outputs']['model_path'] = cfg['outputs']['model_path'].replace(".pth", "_finetuned.pth")
-    cfg['train_params']['epochs'] = 3 # Train for just a few more epochs
+    # 4. Update config paths to point to fine-tuning outputs for the next train call
+    cfg['outputs']['model_path'] = cfg['outputs']['model_path_finetuned']
+    cfg['outputs']['cm_plot_path'] = cfg['outputs']['cm_plot_path_finetuned']
+    cfg['train_params']['epochs'] = cfg['train_params'].get('finetune_epochs', 3) # Get from config or use default
 
-    # 4. Continue training the model (call the train function again).
-    #    The model now has unfrozen layers and will be trained with the new optimizer.
-    results_finetuned = train.train(
+    # 5. Continue training the model
+    results_stage2 = train.train(
         cfg=cfg,
         model=model,
         train_loader=train_loader,
         test_loader=test_loader,
         loss_fn=loss_fn,
         optimizer=optimizer,
+        # scheduler=None, # No scheduler for stage 2 in this setup
         device=device,
         class_names=class_names
     )
     logging.info("Stage 2 (Fine-Tuning) complete.")
-
-    logging.info("Training complete.")
-
-    # 8. Save final report (optional, can also save plot)
-    utils.save_report(results, cfg['outputs']['report_path'])
-    # --- ADD THIS LINE TO AUTOMATICALLY GENERATE THE PLOT ---
-    utils.plot_and_save_curves(results, cfg['outputs']['training_curves_plot_path'])
-
+    
+    # Save reports and plots for Stage 2
+    utils.save_report(results_stage2, cfg['outputs']['report_path_finetuned'])
+    utils.plot_and_save_curves(results_stage2, cfg['outputs']['training_curves_plot_path_finetuned'])
+    
     logging.info(f"All artifacts for the run are saved in: {run_folder_path}")
 
     # 9. (Optional) Visualize results or other post-processing

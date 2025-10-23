@@ -33,6 +33,7 @@ data_params:
 
 train_params:
   epochs: 5
+  finetune_epochs: 3  # <-- ADD THIS LINE
   learning_rate: 0.001
   optimizer: "AdamW"  # Options: "Adam", "AdamW"
 
@@ -45,3 +46,9 @@ outputs:
   cm_plot_path: "{run_folder}/confusion_matrix.png" # Example for future visualization
   submission_file: "{run_folder}/submission.csv" # <-- ADD THIS
   training_curves_plot_path: "{run_folder}/training_curves.png" # <-- ADD THIS LINE
+
+  # --- ADD THESE: Stage 2 (Fine-Tuning) Outputs ---
+  model_path_finetuned: "{run_folder}/best_model_finetuned.pth"
+  report_path_finetuned: "{run_folder}/results_report_finetuned.pkl"
+  cm_plot_path_finetuned: "{run_folder}/confusion_matrix_finetuned.png"
+  training_curves_plot_path_finetuned: "{run_folder}/training_curves_finetuned.png" 
