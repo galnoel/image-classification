@@ -158,7 +158,19 @@ def main():
 
     # 6. Initialize Loss Function and Optimizer
     loss_fn = torch.nn.CrossEntropyLoss()
-    optimizer = torch.optim.Adam(model.parameters(), lr=cfg['train_params']['learning_rate'])
+    #
+
+    # --- CHOOSE OPTIMIZER FROM CONFIG ---
+    optimizer_name = cfg['train_params']['optimizer']
+    learning_rate = cfg['train_params']['learning_rate']
+    
+    if optimizer_name.lower() == 'adamw':
+        optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
+        logging.info(f"Using AdamW optimizer with learning rate: {learning_rate}")
+    else: # Default to Adam
+        optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+        logging.info(f"Using Adam optimizer with learning rate: {learning_rate}")
+
     logging.info("Loss function and optimizer initialized.")
 
     # 7. Start Training

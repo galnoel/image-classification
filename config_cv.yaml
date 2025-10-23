@@ -34,6 +34,7 @@ data_params:
 train_params:
   epochs: 5
   learning_rate: 0.001
+  optimizer: "AdamW"  # Options: "Adam", "AdamW"
 
 # Output paths for saved artifacts - structured for timestamped runs
 outputs:
