@@ -15,3 +15,36 @@
 2025-10-23 18:30:38,251 - INFO - Epoch: 01 | Train Loss: 0.2774 | Train Acc: 0.8766 | Test Loss: 0.0786 | Test Acc: 0.9735
 2025-10-23 18:30:38,286 - INFO - Model saved to outputs\efficientnet_b0_20251023_182939\best_model.pth
 2025-10-23 18:30:38,286 - INFO - New best model saved to outputs\efficientnet_b0_20251023_182939/best_model.pth (Test Acc: 0.9735)
+2025-10-23 18:31:38,267 - INFO - Epoch: 02 | Train Loss: 0.2310 | Train Acc: 0.8970 | Test Loss: 0.0696 | Test Acc: 0.9757
+2025-10-23 18:31:38,303 - INFO - Model saved to outputs\efficientnet_b0_20251023_182939\best_model.pth
+2025-10-23 18:31:38,304 - INFO - New best model saved to outputs\efficientnet_b0_20251023_182939/best_model.pth (Test Acc: 0.9757)
+2025-10-23 18:32:37,967 - INFO - Epoch: 03 | Train Loss: 0.2301 | Train Acc: 0.8982 | Test Loss: 0.0706 | Test Acc: 0.9729
+2025-10-23 18:33:39,505 - INFO - Epoch: 04 | Train Loss: 0.2377 | Train Acc: 0.8919 | Test Loss: 0.0638 | Test Acc: 0.9755
+2025-10-23 18:34:40,056 - INFO - Epoch: 05 | Train Loss: 0.2289 | Train Acc: 0.8958 | Test Loss: 0.0628 | Test Acc: 0.9781
+2025-10-23 18:34:40,103 - INFO - Model saved to outputs\efficientnet_b0_20251023_182939\best_model.pth
+2025-10-23 18:34:40,103 - INFO - New best model saved to outputs\efficientnet_b0_20251023_182939/best_model.pth (Test Acc: 0.9781)
+2025-10-23 18:34:40,104 - INFO - Training process finished.
+2025-10-23 18:34:40,104 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-23 18:35:02,006 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251023_182939/confusion_matrix.png
+2025-10-23 18:35:02,007 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-23 18:35:02,009 - INFO - Report saved to outputs\efficientnet_b0_20251023_182939\results_report.pkl
+2025-10-23 18:35:02,162 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251023_182939/training_curves.png
+2025-10-23 18:35:02,163 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-23 18:35:02,227 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20251023_182939/best_model.pth
+2025-10-23 18:35:02,228 - INFO - Unfroze the top layers of the model for fine-tuning.
+2025-10-23 18:35:02,229 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 0.0001
+2025-10-23 18:35:02,229 - INFO - Starting training for 3 epochs...
+2025-10-23 18:36:02,305 - INFO - Epoch: 01 | Train Loss: 0.1856 | Train Acc: 0.9173 | Test Loss: 0.0306 | Test Acc: 0.9895
+2025-10-23 18:36:02,341 - INFO - Model saved to outputs\efficientnet_b0_20251023_182939\best_model_finetuned.pth
+2025-10-23 18:36:02,342 - INFO - New best model saved to outputs\efficientnet_b0_20251023_182939/best_model_finetuned.pth (Test Acc: 0.9895)
+2025-10-23 18:37:01,166 - INFO - Epoch: 02 | Train Loss: 0.1468 | Train Acc: 0.9365 | Test Loss: 0.0213 | Test Acc: 0.9924
+2025-10-23 18:37:01,206 - INFO - Model saved to outputs\efficientnet_b0_20251023_182939\best_model_finetuned.pth
+2025-10-23 18:37:01,206 - INFO - New best model saved to outputs\efficientnet_b0_20251023_182939/best_model_finetuned.pth (Test Acc: 0.9924)
+2025-10-23 18:38:02,742 - INFO - Epoch: 03 | Train Loss: 0.1250 | Train Acc: 0.9448 | Test Loss: 0.0208 | Test Acc: 0.9924
+2025-10-23 18:38:02,744 - INFO - Training process finished.
+2025-10-23 18:38:02,744 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-23 18:38:28,157 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251023_182939/confusion_matrix_finetuned.png
+2025-10-23 18:38:28,158 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-23 18:38:28,163 - INFO - Report saved to outputs\efficientnet_b0_20251023_182939\results_report_finetuned.pkl
+2025-10-23 18:38:28,621 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251023_182939/training_curves_finetuned.png
+2025-10-23 18:38:28,621 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20251023_182939

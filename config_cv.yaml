@@ -6,7 +6,7 @@
 data:
   # List all your raw image source directories here
   # E.g., if you have images in 'data/PetImages/Cat' and 'data/PetImages/Dog'
-  unlabeled_test_dir: "data_competition/test" # <-- ADD THIS for submission data
+  labeled_test_dir: "from_preprocessor/images/test" # <-- ADD THIS for submission data
   source_dirs:
     - "data/PetImages/Cat"
     - "data/PetImages/Dog"
@@ -14,9 +14,11 @@ data:
 
   # These are the paths for the split train/test data that data_setup.py will create
   # If you already have split data, update these paths and comment out source_dirs
-  train_dir: "data_processed/train"
-  test_dir: "data_processed/test"
-  
+  # train_dir: "data_processed/train"
+  # test_dir: "data_processed/test"
+  train_dir: "from_preprocessor/images/train" # <-- UPDATE THIS
+  test_dir: "from_preprocessor/images/val"   # <-- UPDATE THIS
+
   # For data splitting
   test_split_ratio: 0.2
   
