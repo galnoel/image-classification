@@ -173,6 +173,41 @@ def main():
         device=device,
         class_names=class_names # Pass class_names for confusion matrix
     )
+    logging.info("Stage 1 complete. Best model from this stage is saved.")    # -----------------------------------------------------------------
+    # STAGE 2: FINE-TUNING - The new code you add
+    # -----------------------------------------------------------------
+    logging.info("--- Starting Stage 2: Fine-Tuning ---")
+
+    # 1. Unfreeze the top layers of the model.
+    #    For EfficientNet, we can unfreeze the last few blocks in model.features
+    for param in model.features[-3:].parameters():
+        param.requires_grad = True
+    logging.info("Unfroze the top layers of the model.")
+
+    # 2. Create a new optimizer with a much lower learning rate.
+    #    It's important that this optimizer now sees the newly unfrozen parameters.
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
+    logging.info("Created new optimizer for fine-tuning with learning rate: 0.0001")
+    
+    # 3. Modify config for the next training run (optional but good practice)
+    #    You'll want to save the final fine-tuned model to a different file.
+    cfg['outputs']['model_path'] = cfg['outputs']['model_path'].replace(".pth", "_finetuned.pth")
+    cfg['train_params']['epochs'] = 3 # Train for just a few more epochs
+
+    # 4. Continue training the model (call the train function again).
+    #    The model now has unfrozen layers and will be trained with the new optimizer.
+    results_finetuned = train.train(
+        cfg=cfg,
+        model=model,
+        train_loader=train_loader,
+        test_loader=test_loader,
+        loss_fn=loss_fn,
+        optimizer=optimizer,
+        device=device,
+        class_names=class_names
+    )
+    logging.info("Stage 2 (Fine-Tuning) complete.")
+
     logging.info("Training complete.")
 
     # 8. Save final report (optional, can also save plot)

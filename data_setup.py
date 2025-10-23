@@ -7,7 +7,8 @@ from collections import defaultdict
 import logging
 
 from torchvision import datasets, transforms
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Dataset
+from PIL import Image
 
 def prepare_data(cfg, device):
     """
@@ -136,3 +137,53 @@ def prepare_data(cfg, device):
     )
 
     return train_dataloader, test_dataloader, class_names
+
+# --- NEW: Custom Dataset for Unlabeled Data ---
+class UnlabeledImageDataset(Dataset):
+    """Dataset for inference on unlabeled images."""
+    def __init__(self, data_dir, transform=None):
+        self.data_dir = Path(data_dir)
+        self.file_paths = [p for p in self.data_dir.iterdir() if p.suffix.lower() in ('.png', '.jpg', '.jpeg')]
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.file_paths)
+
+    def __getitem__(self, idx):
+        file_path = self.file_paths[idx]
+        image = Image.open(file_path).convert("RGB")
+        image_id = file_path.name # Use the filename as the ID
+
+        if self.transform:
+            image = self.transform(image)
+            
+        return image, image_id
+
+# --- NEW: Function to create the DataLoader for submission ---
+def create_submission_dataloader(cfg, device):
+    """Creates a DataLoader for the unlabeled test set for submission."""
+    unlabeled_dir = cfg['data']['unlabeled_test_dir']
+    if not Path(unlabeled_dir).exists():
+        raise FileNotFoundError(f"Unlabeled test directory not found at: {unlabeled_dir}")
+
+    image_size = cfg['data_params']['image_size']
+    batch_size = cfg['data_params']['batch_size']
+    num_workers = cfg['data_params']['num_workers']
+
+    submission_transform = transforms.Compose([
+        transforms.Resize((image_size, image_size)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+
+    submission_dataset = UnlabeledImageDataset(data_dir=unlabeled_dir, transform=submission_transform)
+    
+    submission_loader = DataLoader(
+        submission_dataset,
+        batch_size=batch_size,
+        shuffle=False, # Never shuffle test data
+        num_workers=num_workers,
+        pin_memory=(device == "cuda"),
+    )
+    
+    return submission_loader
