@@ -9,7 +9,7 @@ import pandas as pd
 from tqdm import tqdm
 import logging
 
-import data_setup # Import your data setup functions
+from src import data_setup # Import your data setup functions
 
 def predict(args):
     """Generates predictions and creates a submission file."""

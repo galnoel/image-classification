@@ -8,9 +8,9 @@ from torch import nn
 import torchvision
 from torchvision import models
 
-import data_setup
-import train
-import utils
+from src import data_setup
+from src import train
+from src import utils
 
 # import wandb
 
