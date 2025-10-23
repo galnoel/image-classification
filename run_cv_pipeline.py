@@ -149,6 +149,22 @@ def main():
             param.requires_grad = False
         num_ftrs = model.fc.in_features
         model.fc = nn.Linear(num_ftrs, len(class_names))
+    
+    elif model_name_cfg == "resnet50":
+        model = models.resnet50(weights=None)
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters():
+            param.requires_grad = False
+        num_ftrs = model.fc.in_features
+        model.fc = nn.Linear(num_ftrs, len(class_names))
+
+    elif model_name_cfg == "vit_b_16":
+        model = models.vit_b_16(weights=None)
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters():
+            param.requires_grad = False
+        num_ftrs = model.heads.head.in_features
+        model.heads.head = nn.Linear(num_ftrs, len(class_names))
         
     else:
         raise ValueError(f"Model '{model_name_cfg}' is not supported.")
@@ -173,6 +189,19 @@ def main():
 
     logging.info("Loss function and optimizer initialized.")
 
+    # --- INITIALIZE SCHEDULER FROM CONFIG ---
+    scheduler_cfg = cfg['train_params'].get('scheduler', {}) # Use .get() for safety
+    scheduler_name = scheduler_cfg.get('name', 'None')
+    scheduler = None # Initialize as None
+
+    if scheduler_name == "CosineAnnealingLR":
+        scheduler_params = scheduler_cfg.get('params', {})
+        scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, **scheduler_params)
+        logging.info(f"Using CosineAnnealingLR scheduler with params: {scheduler_params}")
+    elif scheduler_name == "ReduceLROnPlateau":
+        # ... (you could add logic for other schedulers here)
+        pass
+
     logging.info("--- Starting Stage 1: Feature Extraction ---")
     
     # 7. Start Training
@@ -183,7 +212,7 @@ def main():
         test_loader=test_loader,
         loss_fn=loss_fn,
         optimizer=optimizer,
-        # scheduler=None, # No scheduler for stage 1 in this setup
+        scheduler=scheduler, # No scheduler for stage 1 in this setup
         device=device,
         class_names=class_names
     )
@@ -231,7 +260,7 @@ def main():
         test_loader=test_loader,
         loss_fn=loss_fn,
         optimizer=optimizer,
-        # scheduler=None, # No scheduler for stage 2 in this setup
+        scheduler=scheduler, # No scheduler for stage 2 in this setup
         device=device,
         class_names=class_names
     )

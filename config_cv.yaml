@@ -36,6 +36,11 @@ train_params:
   finetune_epochs: 3  # <-- ADD THIS LINE
   learning_rate: 0.001
   optimizer: "AdamW"  # Options: "Adam", "AdamW"
+  scheduler:
+    name: "None" # Options: "CosineAnnealingLR", "ReduceLROnPlateau", "None"
+    params:
+      T_max: 10 # For CosineAnnealingLR: The number of epochs for one cycle.
+      # eta_min: 0 # Default is 0
 
 # Output paths for saved artifacts - structured for timestamped runs
 outputs:

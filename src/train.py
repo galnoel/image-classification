@@ -9,7 +9,7 @@ import numpy as np
 from . import engine
 from . import utils
 
-def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, device, class_names):
+def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, device, class_names):
     """The main training loop function."""
     results = {
         "train_loss": [], "train_acc": [],
@@ -36,11 +36,17 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, device, cla
             device=device
         )
 
+        if scheduler:
+            scheduler.step()
+
         log_message = (
           f"Epoch: {epoch+1:02d} | "
           f"Train Loss: {train_loss:.4f} | Train Acc: {train_acc:.4f} | "
           f"Test Loss: {test_loss:.4f} | Test Acc: {test_acc:.4f}"
         )
+        if scheduler:
+            # Optionally log the current learning rate to see the scheduler working
+            log_message += f" | LR: {optimizer.param_groups[0]['lr']:.6f}"
         logging.info(log_message)
 
         results["train_loss"].append(train_loss)
