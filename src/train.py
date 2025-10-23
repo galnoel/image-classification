@@ -6,8 +6,8 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 import numpy as np
 
-import engine
-import utils
+from . import engine
+from . import utils
 
 def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, device, class_names):
     """The main training loop function."""

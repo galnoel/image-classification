@@ -212,7 +212,10 @@ def main():
 
     # 8. Save final report (optional, can also save plot)
     utils.save_report(results, cfg['outputs']['report_path'])
-    logging.info(f"Final performance report saved to {cfg['outputs']['report_path']}")
+    # --- ADD THIS LINE TO AUTOMATICALLY GENERATE THE PLOT ---
+    utils.plot_and_save_curves(results, cfg['outputs']['training_curves_plot_path'])
+
+    logging.info(f"All artifacts for the run are saved in: {run_folder_path}")
 
     # 9. (Optional) Visualize results or other post-processing
     # Example: you might add code here to plot training curves if `results` contains them.

@@ -43,3 +43,4 @@ outputs:
   report_path: "{run_folder}/results_report.pkl" # Using .pkl for Python object
   cm_plot_path: "{run_folder}/confusion_matrix.png" # Example for future visualization
   submission_file: "{run_folder}/submission.csv" # <-- ADD THIS
+  training_curves_plot_path: "{run_folder}/training_curves.png" # <-- ADD THIS LINE
