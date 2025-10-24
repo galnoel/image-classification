@@ -11,6 +11,8 @@ from torchvision import models
 from src import data_setup
 from src import train
 from src import utils
+import time # <-- ADD THIS LINE
+import timm
 
 # import wandb
 
@@ -36,6 +38,10 @@ def setup_logging(log_file):
 
 def main():
     """Main function to run the entire CV pipeline."""
+    
+    # --- 1. RECORD START TIME ---
+    start_time = time.time()
+
     # 1. Load configuration
     with open("config_cv.yaml", "r") as f:
         cfg = yaml.safe_load(f)
@@ -121,7 +127,7 @@ def main():
     if not local_weights_path.exists():
         raise FileNotFoundError(
             f"Model weights not found at {local_weights_path}. "
-            f"Please run 'python save_model_locally.py --model_name {model_name_cfg}' first."
+            f"Please run 'python download_model.py --model_name {model_name_cfg}' first."
         )
 
     # Initialize the model structure based on the name from the config
@@ -169,6 +175,44 @@ def main():
             param.requires_grad = False
         num_ftrs = model.heads.head.in_features
         model.heads.head = nn.Linear(num_ftrs, len(class_names))
+    
+    elif model_name_cfg == "convnext_tiny":
+        model = models.convnext_tiny(weights=None)
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters(): param.requires_grad = False
+        num_ftrs = model.classifier[2].in_features
+        model.classifier[2] = nn.Linear(num_ftrs, len(class_names))
+
+    elif model_name_cfg == "swin_t":
+        model = models.swin_t(weights=None)
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters(): param.requires_grad = False
+        num_ftrs = model.head.in_features
+        model.head = nn.Linear(num_ftrs, len(class_names))
+    
+    elif model_name_cfg == "cvt_13":
+        model = timm.create_model('cvt_13_224', pretrained=False, num_classes=len(class_names))
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters(): param.requires_grad = False
+        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
+
+    elif model_name_cfg == "coat_lite_mini":
+        model = timm.create_model('coat_lite_mini', pretrained=False, num_classes=len(class_names))
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters(): param.requires_grad = False
+        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
+
+    elif model_name_cfg == "efficientformerv2_s0":
+        model = timm.create_model('efficientformerv2_s0', pretrained=False, num_classes=len(class_names))
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters(): param.requires_grad = False
+        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
+
+    elif model_name_cfg == "levit_192":
+        model = timm.create_model('levit_192', pretrained=False, num_classes=len(class_names))
+        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
+        for param in model.parameters(): param.requires_grad = False
+        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
         
     else:
         raise ValueError(f"Model '{model_name_cfg}' is not supported.")
@@ -238,13 +282,50 @@ def main():
     logging.info(f"Loaded best model from Stage 1: {best_model_path_stage1}")
 
     # 2. Unfreeze the top layers of the model.
-    if cfg['model_params']['name'] == 'efficientnet_b0':
-        for param in model.features[-3:].parameters(): # Unfreeze last 3 blocks for EfficientNet
+    model_name_cfg = cfg['model_params']['name']
+    
+    if model_name_cfg == 'efficientnet_b0':
+        # Unfreeze the last 3 blocks for EfficientNet
+        for param in model.features[-3:].parameters():
             param.requires_grad = True
-    else: # For ResNets, you might unfreeze layer4
+        logging.info("Unfroze the top layers of EfficientNet for fine-tuning.")
+        
+    elif 'resnet' in model_name_cfg:
+        # Unfreeze the last block (layer4) for ResNets
         for param in model.layer4.parameters():
             param.requires_grad = True
-    logging.info("Unfroze the top layers of the model for fine-tuning.")
+        logging.info("Unfroze layer4 of ResNet for fine-tuning.")
+        
+    elif 'vit' in model_name_cfg:
+        # For Vision Transformer, unfreeze the last 2 encoder blocks
+        for param in model.encoder.layers[-2:].parameters():
+            param.requires_grad = True
+        logging.info("Unfroze the top layers of Vision Transformer for fine-tuning.")
+    
+    elif 'convnext' in model_name_cfg:
+        # For ConvNeXt, unfreeze the final stage (the last block of layers)
+        for param in model.features[-1].parameters():
+            param.requires_grad = True
+        logging.info("Unfroze the final stage of ConvNeXt.")
+
+    elif 'swin' in model_name_cfg:
+        # For Swin Transformer, unfreeze the final stage
+        for param in model.features[-1].parameters():
+            param.requires_grad = True
+        logging.info("Unfroze the final stage of Swin Transformer.")
+
+    elif model_name_cfg in ["cvt_13", "coat_lite_mini", "efficientformerv2_s0"]:
+        # Unfreeze the final stage of the model
+        for param in model.stages[-1].parameters():
+            param.requires_grad = True
+        logging.info(f"Unfroze the final stage of {model_name_cfg}.")
+
+    # LeViT uses 'blocks'
+    elif 'levit' in model_name_cfg:
+        # Unfreeze the final block of the model
+        for param in model.blocks[-1].parameters():
+            param.requires_grad = True
+        logging.info(f"Unfroze the final block of {model_name_cfg}.")
 
     # 3. Create a new optimizer for fine-tuning with a lower learning rate.
     finetune_lr = cfg['train_params'].get('finetune_learning_rate', 1e-4) # Get from config or use default
@@ -275,6 +356,20 @@ def main():
     utils.plot_and_save_curves(results_stage2, cfg['outputs']['training_curves_plot_path_finetuned'])
     
     logging.info(f"All artifacts for the run are saved in: {run_folder_path}")
+
+    # --- 2. RECORD END TIME AND CALCULATE DURATION ---
+    end_time = time.time()
+    duration_seconds = end_time - start_time
+    
+    # Convert seconds to a more readable format (minutes and seconds)
+    minutes = int(duration_seconds // 60)
+    seconds = int(duration_seconds % 60)
+    
+    # --- 3. LOG THE FINAL DURATION ---
+    logging.info("="*50)
+    logging.info(f"PIPELINE EXECUTION COMPLETE")
+    logging.info(f"Total duration: {minutes} minutes and {seconds} seconds.")
+    logging.info("="*50)
 
     # 9. (Optional) Visualize results or other post-processing
     # Example: you might add code here to plot training curves if `results` contains them.

@@ -1,0 +1,11 @@
+2025-10-24 18:05:41,494 - INFO - Configuration loaded and logging set up.
+2025-10-24 18:05:41,495 - INFO - All outputs for this run will be saved in: outputs\vit_b_16_20251024_180541
+2025-10-24 18:05:41,517 - INFO - Using device: cuda
+2025-10-24 18:05:41,517 - INFO - Starting data preparation...
+2025-10-24 18:05:41,559 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-24 18:05:41,560 - INFO - Creating PyTorch DataLoaders...
+2025-10-24 18:05:41,620 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-24 18:05:41,621 - INFO - Using training data from: data_processed/train
+2025-10-24 18:05:41,621 - INFO - Using validation data from: data_processed/test
+2025-10-24 18:05:41,622 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-24 18:05:41,623 - INFO - Initializing model: vit_b_16

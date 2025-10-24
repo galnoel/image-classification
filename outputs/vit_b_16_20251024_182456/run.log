@@ -1,0 +1,35 @@
+2025-10-24 18:24:56,902 - INFO - Configuration loaded and logging set up.
+2025-10-24 18:24:56,903 - INFO - All outputs for this run will be saved in: outputs\vit_b_16_20251024_182456
+2025-10-24 18:24:56,926 - INFO - Using device: cuda
+2025-10-24 18:24:56,927 - INFO - Starting data preparation...
+2025-10-24 18:24:56,963 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-24 18:24:56,964 - INFO - Creating PyTorch DataLoaders...
+2025-10-24 18:24:57,019 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-24 18:24:57,019 - INFO - Using training data from: data_processed/train
+2025-10-24 18:24:57,019 - INFO - Using validation data from: data_processed/test
+2025-10-24 18:24:57,019 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-24 18:24:57,022 - INFO - Initializing model: vit_b_16
+2025-10-24 18:24:57,764 - INFO - Model 'vit_b_16' initialized and moved to 'cuda'.
+2025-10-24 18:24:57,764 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-24 18:24:57,764 - INFO - Loss function and optimizer initialized.
+2025-10-24 18:24:57,765 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-24 18:24:57,765 - INFO - Starting training for 5 epochs...
+2025-10-24 18:28:46,332 - INFO - Epoch: 01 | Train Loss: 0.1027 | Train Acc: 0.9611 | Test Loss: 0.0202 | Test Acc: 0.9966
+2025-10-24 18:28:46,953 - INFO - Model saved to outputs\vit_b_16_20251024_182456\best_model.pth
+2025-10-24 18:28:46,953 - INFO - New best model saved to outputs\vit_b_16_20251024_182456/best_model.pth (Test Acc: 0.9966)
+2025-10-24 18:32:48,531 - INFO - Epoch: 02 | Train Loss: 0.0825 | Train Acc: 0.9674 | Test Loss: 0.0173 | Test Acc: 0.9968
+2025-10-24 18:32:48,840 - INFO - Model saved to outputs\vit_b_16_20251024_182456\best_model.pth
+2025-10-24 18:32:48,841 - INFO - New best model saved to outputs\vit_b_16_20251024_182456/best_model.pth (Test Acc: 0.9968)
+2025-10-24 18:36:43,423 - INFO - Epoch: 03 | Train Loss: 0.0742 | Train Acc: 0.9690 | Test Loss: 0.0160 | Test Acc: 0.9966
+2025-10-24 18:40:40,035 - INFO - Epoch: 04 | Train Loss: 0.0753 | Train Acc: 0.9699 | Test Loss: 0.0141 | Test Acc: 0.9968
+2025-10-24 18:44:46,207 - INFO - Epoch: 05 | Train Loss: 0.0797 | Train Acc: 0.9683 | Test Loss: 0.0153 | Test Acc: 0.9970
+2025-10-24 18:44:46,754 - INFO - Model saved to outputs\vit_b_16_20251024_182456\best_model.pth
+2025-10-24 18:44:46,755 - INFO - New best model saved to outputs\vit_b_16_20251024_182456/best_model.pth (Test Acc: 0.9970)
+2025-10-24 18:44:46,756 - INFO - Training process finished.
+2025-10-24 18:44:46,756 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-24 18:45:42,480 - INFO - Confusion matrix saved to outputs\vit_b_16_20251024_182456/confusion_matrix.png
+2025-10-24 18:45:42,481 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-24 18:45:42,483 - INFO - Report saved to outputs\vit_b_16_20251024_182456\results_report.pkl
+2025-10-24 18:45:42,937 - INFO - Training curves plot saved to: outputs\vit_b_16_20251024_182456/training_curves.png
+2025-10-24 18:45:42,937 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-24 18:45:43,218 - INFO - Loaded best model from Stage 1: outputs\vit_b_16_20251024_182456/best_model.pth

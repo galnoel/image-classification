@@ -1,0 +1,16 @@
+2025-10-24 18:56:35,230 - INFO - Configuration loaded and logging set up.
+2025-10-24 18:56:35,231 - INFO - All outputs for this run will be saved in: outputs\vit_b_16_20251024_185635
+2025-10-24 18:56:35,252 - INFO - Using device: cuda
+2025-10-24 18:56:35,252 - INFO - Starting data preparation...
+2025-10-24 18:56:35,289 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-24 18:56:35,289 - INFO - Creating PyTorch DataLoaders...
+2025-10-24 18:56:35,345 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-24 18:56:35,346 - INFO - Using training data from: data_processed/train
+2025-10-24 18:56:35,347 - INFO - Using validation data from: data_processed/test
+2025-10-24 18:56:35,348 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-24 18:56:35,350 - INFO - Initializing model: vit_b_16
+2025-10-24 18:56:36,043 - INFO - Model 'vit_b_16' initialized and moved to 'cuda'.
+2025-10-24 18:56:36,046 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-24 18:56:36,047 - INFO - Loss function and optimizer initialized.
+2025-10-24 18:56:36,047 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-24 18:56:36,049 - INFO - Starting training for 5 epochs...

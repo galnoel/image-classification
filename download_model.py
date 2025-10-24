@@ -3,6 +3,7 @@ import torch
 import torchvision.models as models
 import argparse
 from pathlib import Path
+import timm
 
 # --- Define the available models ---
 AVAILABLE_MODELS = {
@@ -11,6 +12,12 @@ AVAILABLE_MODELS = {
     "resnet50": models.resnet50,
     "vit_b_16": models.vit_b_16,
     "mobilenet_v3_small": models.mobilenet_v3_small,
+    "convnext_tiny": models.convnext_tiny,
+    "swin_t": models.swin_t,
+    "cvt_13": lambda weights: timm.create_model('cvt_13_224', pretrained=True),
+    "coat_lite_mini": lambda weights: timm.create_model('coat_lite_mini', pretrained=True),
+    "efficientformerv2_s0": lambda weights: timm.create_model('efficientformerv2_s0', pretrained=True),
+    "levit_192": lambda weights: timm.create_model('levit_192', pretrained=True),
 }
 
 def save_model(model_name, save_dir="pretrained_models"):
