@@ -8,7 +8,7 @@ data:
   test_dir: data_processed/test
   test_split_ratio: 0.2
 model_params:
-  name: resnet50
+  name: swin_t
   pretrained: true
   local_weights_dir: pretrained_models
 data_params:
