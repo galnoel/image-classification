@@ -1,22 +1,13 @@
-# set_model.py
+    # set_model.py
 import yaml
 from pathlib import Path
 
-# --- This list is the single source of truth for available models ---
-# Make sure these names match the keys in your run_cv_pipeline.py logic
-AVAILABLE_MODELS = [
-    "efficientnet_b0",
-    "resnet18",
-    "resnet50",
-    "vit_b_16",
-    "convnext_tiny",
-    "swin_t",
-    "maxvit_tiny",
-    "cvt_13",
-    "coat_lite_mini",
-    "efficientformerv2_s0",
-    "levit_192",
-]
+# --- 1. IMPORT from the new central file ---
+from src.model_definitions import AVAILABLE_MODELS
+
+# --- 2. REMOVE the old, redundant list and get names from the dictionary ---
+# AVAILABLE_MODELS = [ ... ] # This is no longer needed
+MODEL_NAMES = list(AVAILABLE_MODELS.keys())
 
 CONFIG_PATH = Path("config_cv.yaml")
 

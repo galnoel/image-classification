@@ -1,0 +1,56 @@
+2025-10-24 19:49:09,004 - INFO - Configuration loaded and logging set up.
+2025-10-24 19:49:09,004 - INFO - All outputs for this run will be saved in: outputs\swin_t_20251024_194909
+2025-10-24 19:49:09,028 - INFO - Using device: cuda
+2025-10-24 19:49:09,028 - INFO - Starting data preparation...
+2025-10-24 19:49:09,071 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-24 19:49:09,072 - INFO - Creating PyTorch DataLoaders...
+2025-10-24 19:49:09,133 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-24 19:49:09,134 - INFO - Using training data from: data_processed/train
+2025-10-24 19:49:09,134 - INFO - Using validation data from: data_processed/test
+2025-10-24 19:49:09,134 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-24 19:49:09,137 - INFO - Initializing model: swin_t
+2025-10-24 19:49:09,627 - INFO - Model 'swin_t' initialized and moved to 'cuda'.
+2025-10-24 19:49:09,628 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-24 19:49:09,628 - INFO - Loss function and optimizer initialized.
+2025-10-24 19:49:09,628 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-24 19:49:09,629 - INFO - Starting training for 5 epochs...
+2025-10-24 19:51:03,973 - INFO - Epoch: 01 | Train Loss: 0.0905 | Train Acc: 0.9691 | Test Loss: 0.0136 | Test Acc: 0.9962
+2025-10-24 19:51:04,081 - INFO - Model saved to outputs\swin_t_20251024_194909\best_model.pth
+2025-10-24 19:51:04,081 - INFO - New best model saved to outputs\swin_t_20251024_194909/best_model.pth (Test Acc: 0.9962)
+2025-10-24 19:53:15,435 - INFO - Epoch: 02 | Train Loss: 0.0710 | Train Acc: 0.9721 | Test Loss: 0.0131 | Test Acc: 0.9962
+2025-10-24 19:55:46,891 - INFO - Epoch: 03 | Train Loss: 0.0704 | Train Acc: 0.9719 | Test Loss: 0.0115 | Test Acc: 0.9966
+2025-10-24 19:55:47,098 - INFO - Model saved to outputs\swin_t_20251024_194909\best_model.pth
+2025-10-24 19:55:47,099 - INFO - New best model saved to outputs\swin_t_20251024_194909/best_model.pth (Test Acc: 0.9966)
+2025-10-24 19:58:19,873 - INFO - Epoch: 04 | Train Loss: 0.0698 | Train Acc: 0.9730 | Test Loss: 0.0118 | Test Acc: 0.9966
+2025-10-24 20:00:07,517 - INFO - Epoch: 05 | Train Loss: 0.0670 | Train Acc: 0.9742 | Test Loss: 0.0120 | Test Acc: 0.9968
+2025-10-24 20:00:07,623 - INFO - Model saved to outputs\swin_t_20251024_194909\best_model.pth
+2025-10-24 20:00:07,623 - INFO - New best model saved to outputs\swin_t_20251024_194909/best_model.pth (Test Acc: 0.9968)
+2025-10-24 20:00:07,624 - INFO - Training process finished.
+2025-10-24 20:00:07,624 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-24 20:00:42,668 - INFO - Confusion matrix saved to outputs\swin_t_20251024_194909/confusion_matrix.png
+2025-10-24 20:00:42,669 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-24 20:00:42,670 - INFO - Report saved to outputs\swin_t_20251024_194909\results_report.pkl
+2025-10-24 20:00:42,951 - INFO - Training curves plot saved to: outputs\swin_t_20251024_194909/training_curves.png
+2025-10-24 20:00:42,951 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-24 20:00:43,016 - INFO - Loaded best model from Stage 1: outputs\swin_t_20251024_194909/best_model.pth
+2025-10-24 20:00:43,017 - INFO - Unfroze the final stage of Swin Transformer.
+2025-10-24 20:00:43,017 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 0.0001
+2025-10-24 20:00:43,017 - INFO - Starting training for 3 epochs...
+2025-10-24 20:02:42,131 - INFO - Epoch: 01 | Train Loss: 0.0777 | Train Acc: 0.9700 | Test Loss: 0.0112 | Test Acc: 0.9966
+2025-10-24 20:02:42,227 - INFO - Model saved to outputs\swin_t_20251024_194909\best_model_finetuned.pth
+2025-10-24 20:02:42,227 - INFO - New best model saved to outputs\swin_t_20251024_194909/best_model_finetuned.pth (Test Acc: 0.9966)
+2025-10-24 20:04:43,361 - INFO - Epoch: 02 | Train Loss: 0.0669 | Train Acc: 0.9735 | Test Loss: 0.0088 | Test Acc: 0.9966
+2025-10-24 20:06:46,742 - INFO - Epoch: 03 | Train Loss: 0.0657 | Train Acc: 0.9744 | Test Loss: 0.0079 | Test Acc: 0.9972
+2025-10-24 20:06:46,851 - INFO - Model saved to outputs\swin_t_20251024_194909\best_model_finetuned.pth
+2025-10-24 20:06:46,851 - INFO - New best model saved to outputs\swin_t_20251024_194909/best_model_finetuned.pth (Test Acc: 0.9972)
+2025-10-24 20:06:46,855 - INFO - Training process finished.
+2025-10-24 20:06:46,856 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-24 20:07:22,270 - INFO - Confusion matrix saved to outputs\swin_t_20251024_194909/confusion_matrix_finetuned.png
+2025-10-24 20:07:22,272 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-24 20:07:22,273 - INFO - Report saved to outputs\swin_t_20251024_194909\results_report_finetuned.pkl
+2025-10-24 20:07:22,429 - INFO - Training curves plot saved to: outputs\swin_t_20251024_194909/training_curves_finetuned.png
+2025-10-24 20:07:22,429 - INFO - All artifacts for the run are saved in: outputs\swin_t_20251024_194909
+2025-10-24 20:07:22,429 - INFO - ==================================================
+2025-10-24 20:07:22,429 - INFO - PIPELINE EXECUTION COMPLETE
+2025-10-24 20:07:22,430 - INFO - Total duration: 18 minutes and 13 seconds.
+2025-10-24 20:07:22,430 - INFO - ==================================================
