@@ -16,10 +16,10 @@ data:
 
   # These are the paths for the split train/test data that data_setup.py will create
   # If you already have split data, update these paths and comment out source_dirs
-  # train_dir: "data_processed/train"
-  # test_dir: "data_processed/test"
-  train_dir: "from_preprocessor/images/train" # <-- UPDATE THIS
-  test_dir: "from_preprocessor/images/val"   # <-- UPDATE THIS
+  train_dir: "data_processed/train"
+  test_dir: "data_processed/test"
+  # train_dir: "from_preprocessor/images/train" # <-- UPDATE THIS
+  # test_dir: "from_preprocessor/images/val"   # <-- UPDATE THIS
 
   # For data splitting
   test_split_ratio: 0.2

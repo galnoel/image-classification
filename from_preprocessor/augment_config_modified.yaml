@@ -1,0 +1,58 @@
+# augment_config.yaml (SAFE / conservative)
+seed: 42
+
+data:
+  # <<< set these to your real paths >>>
+  manifest_csv: "/path/to/manifest.csv"
+  root_dir: "/path/to/dataset/root"
+  splits: ["train"]
+  # optional chunking
+  offset: 0
+  limit: null
+
+aug:
+  # fewer variants to start; bump later once visuals look good
+  per_image: 1
+  # toned-down augmentations to avoid washed-out / noisy results
+  preset: "light"
+  img_size: [224, 224]
+
+output:
+  dir: "/path/to/output_augmented"
+  keep_label_dirs: true
+  format: "jpg"
+  jpeg_quality: 95
+  manifest_csv: "/path/to/manifest_with_aug.csv"
+  overwrite: false
+  skip_existing: true
+
+manipulation:
+  to_float:
+    enabled: false
+    max_value: 255.0
+  size:
+    # Use resize (not letterbox) to avoid black bars getting cropped awkwardly
+    mode: "resize"
+    resize:
+      size: [256, 256]
+
+enhancement:
+  denoise:
+    type: "none"
+  contrast:
+    type: "none"
+  gamma:
+    enabled: false
+    gamma_value: 1.0
+  sharpen:
+    enabled: false
+    alpha: 0.25
+    blur_limit: 3
+  to_float:
+    enabled: false
+    max_value: 255.0
+
+runtime:
+  skip_errors: true
+  log_errors: "errors.log"
+  avoid_manifest_dupes: true
