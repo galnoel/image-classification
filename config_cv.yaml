@@ -7,6 +7,8 @@ data:
   # List all your raw image source directories here
   # E.g., if you have images in 'data/PetImages/Cat' and 'data/PetImages/Dog'
   labeled_test_dir: "from_preprocessor/images/test" # <-- ADD THIS for submission data
+  unlabeled_test_dir: "from_preprocessor/images/test" # <-- ADD THIS for submission data
+
   source_dirs:
     - "data/PetImages/Cat"
     - "data/PetImages/Dog"

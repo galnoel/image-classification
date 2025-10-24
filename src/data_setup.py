@@ -143,7 +143,7 @@ class UnlabeledImageDataset(Dataset):
     """Dataset for inference on unlabeled images."""
     def __init__(self, data_dir, transform=None):
         self.data_dir = Path(data_dir)
-        self.file_paths = [p for p in self.data_dir.iterdir() if p.suffix.lower() in ('.png', '.jpg', '.jpeg')]
+        self.file_paths = [p for p in self.data_dir.rglob('*') if p.suffix.lower() in ('.png', '.jpg', '.jpeg')]
         self.transform = transform
 
     def __len__(self):

@@ -72,6 +72,10 @@ def main():
     # 4. Prepare Data: Split, Augment, and Create DataLoaders
     logging.info("Starting data preparation...")
     train_loader, test_loader, class_names = data_setup.prepare_data(cfg, device)
+
+    logging.info(f"Using training data from: {cfg['data']['train_dir']}")
+    logging.info(f"Using validation data from: {cfg['data']['test_dir']}")
+
     logging.info(f"Data preparation complete. Found classes: {class_names}")
 
 #----------------------------------------------------------------------------------------------------------
