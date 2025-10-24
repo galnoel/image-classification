@@ -1,63 +1,38 @@
-# ----------------------------------------------------
-# Configuration for the Computer Vision Pipeline
-# ----------------------------------------------------
-
-# File paths
 data:
-  # List all your raw image source directories here
-  # E.g., if you have images in 'data/PetImages/Cat' and 'data/PetImages/Dog'
-  labeled_test_dir: "from_preprocessor/images/test" # <-- ADD THIS for submission data
-  unlabeled_test_dir: "from_preprocessor/images/test" # <-- ADD THIS for submission data
-
+  labeled_test_dir: from_preprocessor/images/test
+  unlabeled_test_dir: from_preprocessor/images/test
   source_dirs:
-    - "data/PetImages/Cat"
-    - "data/PetImages/Dog"
-    
-
-  # These are the paths for the split train/test data that data_setup.py will create
-  # If you already have split data, update these paths and comment out source_dirs
-  train_dir: "data_processed/train"
-  test_dir: "data_processed/test"
-  # train_dir: "from_preprocessor/images/train" # <-- UPDATE THIS
-  # test_dir: "from_preprocessor/images/val"   # <-- UPDATE THIS
-
-  # For data splitting
+  - data/PetImages/Cat
+  - data/PetImages/Dog
+  train_dir: data_processed/train
+  test_dir: data_processed/test
   test_split_ratio: 0.2
-  
-# Parameters for modeling
 model_params:
-  name: "efficientnet_b0" # Model from torchvision.models
+  name: resnet50
   pretrained: true
-  local_weights_dir: "pretrained_models" # <-- ADD THIS LINE
-
+  local_weights_dir: pretrained_models
 data_params:
   image_size: 224
   batch_size: 32
-  num_workers: 4 # Number of CPU cores for data loading (adjust based on your system)
-
+  num_workers: 4
 train_params:
   epochs: 5
-  finetune_epochs: 3  # <-- ADD THIS LINE
+  finetune_epochs: 3
   learning_rate: 0.001
-  optimizer: "AdamW"  # Options: "Adam", "AdamW"
+  optimizer: AdamW
   scheduler:
-    name: "None" # Options: "CosineAnnealingLR", "ReduceLROnPlateau", "None"
+    name: None
     params:
-      T_max: 10 # For CosineAnnealingLR: The number of epochs for one cycle.
-      # eta_min: 0 # Default is 0
-
-# Output paths for saved artifacts - structured for timestamped runs
+      T_max: 10
 outputs:
-  base_dir: "outputs" # Matches your desired 'outputs' folder
-  log_file: "{run_folder}/run.log"
-  model_path: "{run_folder}/best_model.pth"
-  report_path: "{run_folder}/results_report.pkl" # Using .pkl for Python object
-  cm_plot_path: "{run_folder}/confusion_matrix.png" # Example for future visualization
-  submission_file: "{run_folder}/submission.csv" # <-- ADD THIS
-  training_curves_plot_path: "{run_folder}/training_curves.png" # <-- ADD THIS LINE
-
-  # --- ADD THESE: Stage 2 (Fine-Tuning) Outputs ---
-  model_path_finetuned: "{run_folder}/best_model_finetuned.pth"
-  report_path_finetuned: "{run_folder}/results_report_finetuned.pkl"
-  cm_plot_path_finetuned: "{run_folder}/confusion_matrix_finetuned.png"
-  training_curves_plot_path_finetuned: "{run_folder}/training_curves_finetuned.png" 
+  base_dir: outputs
+  log_file: '{run_folder}/run.log'
+  model_path: '{run_folder}/best_model.pth'
+  report_path: '{run_folder}/results_report.pkl'
+  cm_plot_path: '{run_folder}/confusion_matrix.png'
+  submission_file: '{run_folder}/submission.csv'
+  training_curves_plot_path: '{run_folder}/training_curves.png'
+  model_path_finetuned: '{run_folder}/best_model_finetuned.pth'
+  report_path_finetuned: '{run_folder}/results_report_finetuned.pkl'
+  cm_plot_path_finetuned: '{run_folder}/confusion_matrix_finetuned.png'
+  training_curves_plot_path_finetuned: '{run_folder}/training_curves_finetuned.png'
