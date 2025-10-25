@@ -1,4 +1,4 @@
-# run_cv_pipeline.py
+    # run_cv_pipeline.py
 import yaml
 import logging
 from datetime import datetime
@@ -14,6 +14,8 @@ from src import utils
 import time # <-- ADD THIS LINE
 import timm
 
+# from focal_loss.focal_loss import FocalLoss 
+from kornia.losses import FocalLoss # <-- Use the Kornia import
 # import wandb
 
 # import os
@@ -223,8 +225,17 @@ def main():
     logging.info(f"Model '{cfg['model_params']['name']}' initialized and moved to '{device}'.")
 
     # 6. Initialize Loss Function and Optimizer
-    loss_fn = torch.nn.CrossEntropyLoss()
-    #
+    loss_cfg = cfg['loss_function']
+    loss_name = loss_cfg['name']
+
+    if loss_name == "FocalLoss":
+        # Kornia's FocalLoss takes alpha and gamma directly.
+        # It expects raw logits, which our model provides.
+        loss_fn = FocalLoss(**loss_cfg['params'])
+        logging.info(f"Using Kornia FocalLoss with params: {loss_cfg['params']}")
+    else: # Default to CrossEntropyLoss
+        loss_fn = torch.nn.CrossEntropyLoss()
+        logging.info("Using CrossEntropyLoss.")
 
     # --- CHOOSE OPTIMIZER FROM CONFIG ---
     optimizer_name = cfg['train_params']['optimizer']
