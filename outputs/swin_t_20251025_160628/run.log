@@ -1,0 +1,12 @@
+2025-10-25 16:06:28,286 - INFO - Configuration loaded and logging set up.
+2025-10-25 16:06:28,287 - INFO - All outputs for this run will be saved in: outputs\swin_t_20251025_160628
+2025-10-25 16:06:28,305 - INFO - Using device: cuda
+2025-10-25 16:06:28,307 - INFO - Starting data preparation...
+2025-10-25 16:06:28,345 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-25 16:06:28,345 - INFO - Creating PyTorch DataLoaders...
+2025-10-25 16:06:28,403 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-25 16:06:28,404 - INFO - Using training data from: data_processed/train
+2025-10-25 16:06:28,405 - INFO - Using validation data from: data_processed/test
+2025-10-25 16:06:28,406 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-25 16:06:28,407 - INFO - Initializing model: swin_t
+2025-10-25 16:06:28,845 - INFO - Model 'swin_t' initialized and moved to 'cuda'.

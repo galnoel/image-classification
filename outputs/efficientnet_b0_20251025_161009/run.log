@@ -1,0 +1,12 @@
+2025-10-25 16:10:09,601 - INFO - Configuration loaded and logging set up.
+2025-10-25 16:10:09,601 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251025_161009
+2025-10-25 16:10:09,621 - INFO - Using device: cuda
+2025-10-25 16:10:09,621 - INFO - Starting data preparation...
+2025-10-25 16:10:09,659 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-25 16:10:09,660 - INFO - Creating PyTorch DataLoaders...
+2025-10-25 16:10:09,721 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-25 16:10:09,721 - INFO - Using training data from: data_processed/train
+2025-10-25 16:10:09,724 - INFO - Using validation data from: data_processed/test
+2025-10-25 16:10:09,724 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-25 16:10:09,726 - INFO - Initializing model: efficientnet_b0
+2025-10-25 16:10:09,931 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.

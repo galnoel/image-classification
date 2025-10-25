@@ -1,0 +1,17 @@
+2025-10-25 16:17:03,900 - INFO - Configuration loaded and logging set up.
+2025-10-25 16:17:03,901 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251025_161703
+2025-10-25 16:17:03,918 - INFO - Using device: cuda
+2025-10-25 16:17:03,919 - INFO - Starting data preparation...
+2025-10-25 16:17:03,958 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-25 16:17:03,959 - INFO - Creating PyTorch DataLoaders...
+2025-10-25 16:17:04,127 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-25 16:17:04,128 - INFO - Using training data from: data_processed/train
+2025-10-25 16:17:04,128 - INFO - Using validation data from: data_processed/test
+2025-10-25 16:17:04,129 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-25 16:17:04,129 - INFO - Initializing model: efficientnet_b0
+2025-10-25 16:17:04,295 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-25 16:17:04,295 - INFO - Using Kornia FocalLoss with params: {'alpha': 0.25, 'gamma': 2.0}
+2025-10-25 16:17:04,297 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-25 16:17:04,297 - INFO - Loss function and optimizer initialized.
+2025-10-25 16:17:04,297 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-25 16:17:04,298 - INFO - Starting training for 5 epochs...

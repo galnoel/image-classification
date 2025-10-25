@@ -1,0 +1,61 @@
+2025-10-25 16:20:58,671 - INFO - Configuration loaded and logging set up.
+2025-10-25 16:20:58,671 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251025_162058
+2025-10-25 16:20:58,696 - INFO - Using device: cuda
+2025-10-25 16:20:58,696 - INFO - Starting data preparation...
+2025-10-25 16:20:58,734 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-25 16:20:58,735 - INFO - Creating PyTorch DataLoaders...
+2025-10-25 16:20:58,901 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-25 16:20:58,903 - INFO - Using training data from: data_processed/train
+2025-10-25 16:20:58,903 - INFO - Using validation data from: data_processed/test
+2025-10-25 16:20:58,903 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-25 16:20:58,905 - INFO - Initializing model: efficientnet_b0
+2025-10-25 16:20:59,065 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-25 16:20:59,066 - INFO - Using Kornia FocalLoss with params: {'alpha': 0.25, 'gamma': 2.0, 'reduction': 'mean'}
+2025-10-25 16:20:59,068 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-25 16:20:59,070 - INFO - Loss function and optimizer initialized.
+2025-10-25 16:20:59,070 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-25 16:20:59,070 - INFO - Starting training for 5 epochs...
+2025-10-25 16:22:18,209 - INFO - Epoch: 01 | Train Loss: 0.0148 | Train Acc: 0.8604 | Test Loss: 0.0036 | Test Acc: 0.9717
+2025-10-25 16:22:18,244 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model.pth
+2025-10-25 16:22:18,245 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model.pth (Test Acc: 0.9717)
+2025-10-25 16:24:46,547 - INFO - Epoch: 02 | Train Loss: 0.0137 | Train Acc: 0.8774 | Test Loss: 0.0037 | Test Acc: 0.9715
+2025-10-25 16:27:24,194 - INFO - Epoch: 03 | Train Loss: 0.0141 | Train Acc: 0.8745 | Test Loss: 0.0039 | Test Acc: 0.9727
+2025-10-25 16:27:24,288 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model.pth
+2025-10-25 16:27:24,288 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model.pth (Test Acc: 0.9727)
+2025-10-25 16:30:39,497 - INFO - Epoch: 04 | Train Loss: 0.0141 | Train Acc: 0.8767 | Test Loss: 0.0039 | Test Acc: 0.9739
+2025-10-25 16:30:39,589 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model.pth
+2025-10-25 16:30:39,590 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model.pth (Test Acc: 0.9739)
+2025-10-25 16:33:59,181 - INFO - Epoch: 05 | Train Loss: 0.0140 | Train Acc: 0.8752 | Test Loss: 0.0038 | Test Acc: 0.9751
+2025-10-25 16:33:59,280 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model.pth
+2025-10-25 16:33:59,281 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model.pth (Test Acc: 0.9751)
+2025-10-25 16:33:59,283 - INFO - Training process finished.
+2025-10-25 16:33:59,283 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-25 16:35:17,423 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251025_162058/confusion_matrix.png
+2025-10-25 16:35:17,424 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-25 16:35:17,426 - INFO - Report saved to outputs\efficientnet_b0_20251025_162058\results_report.pkl
+2025-10-25 16:35:17,856 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251025_162058/training_curves.png
+2025-10-25 16:35:17,856 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-25 16:35:18,021 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20251025_162058/best_model.pth
+2025-10-25 16:35:18,022 - INFO - Unfroze the top layers of EfficientNet for fine-tuning.
+2025-10-25 16:35:18,023 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 0.0001
+2025-10-25 16:35:18,024 - INFO - Starting training for 3 epochs...
+2025-10-25 16:38:24,470 - INFO - Epoch: 01 | Train Loss: 0.0114 | Train Acc: 0.8947 | Test Loss: 0.0017 | Test Acc: 0.9849
+2025-10-25 16:38:24,550 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model_finetuned.pth
+2025-10-25 16:38:24,551 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model_finetuned.pth (Test Acc: 0.9849)
+2025-10-25 16:41:36,982 - INFO - Epoch: 02 | Train Loss: 0.0087 | Train Acc: 0.9182 | Test Loss: 0.0013 | Test Acc: 0.9879
+2025-10-25 16:41:37,081 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model_finetuned.pth
+2025-10-25 16:41:37,082 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model_finetuned.pth (Test Acc: 0.9879)
+2025-10-25 16:44:45,832 - INFO - Epoch: 03 | Train Loss: 0.0073 | Train Acc: 0.9312 | Test Loss: 0.0015 | Test Acc: 0.9922
+2025-10-25 16:44:45,920 - INFO - Model saved to outputs\efficientnet_b0_20251025_162058\best_model_finetuned.pth
+2025-10-25 16:44:45,921 - INFO - New best model saved to outputs\efficientnet_b0_20251025_162058/best_model_finetuned.pth (Test Acc: 0.9922)
+2025-10-25 16:44:45,921 - INFO - Training process finished.
+2025-10-25 16:44:45,922 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-25 16:45:57,922 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251025_162058/confusion_matrix_finetuned.png
+2025-10-25 16:45:57,925 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-25 16:45:57,927 - INFO - Report saved to outputs\efficientnet_b0_20251025_162058\results_report_finetuned.pkl
+2025-10-25 16:45:58,290 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251025_162058/training_curves_finetuned.png
+2025-10-25 16:45:58,291 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20251025_162058
+2025-10-25 16:45:58,291 - INFO - ==================================================
+2025-10-25 16:45:58,291 - INFO - PIPELINE EXECUTION COMPLETE
+2025-10-25 16:45:58,292 - INFO - Total duration: 24 minutes and 59 seconds.
+2025-10-25 16:45:58,293 - INFO - ==================================================
