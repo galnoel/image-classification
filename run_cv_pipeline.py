@@ -190,30 +190,32 @@ def main():
         num_ftrs = model.head.in_features
         model.head = nn.Linear(num_ftrs, len(class_names))
     
-    elif model_name_cfg == "cvt_13":
-        model = timm.create_model('cvt_13_224', pretrained=False, num_classes=len(class_names))
-        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
-        for param in model.parameters(): param.requires_grad = False
-        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
+    elif model_name_cfg in ["maxvit_tiny", "cvt_13", "coat_lite_mini", "efficientformerv2_s0", "levit_192"]:
+        # 1. Create your model with the correct number of classes, but no weights yet.
+        model = timm.create_model(model_name_cfg, pretrained=False, num_classes=len(class_names))
 
-    elif model_name_cfg == "coat_lite_mini":
-        model = timm.create_model('coat_lite_mini', pretrained=False, num_classes=len(class_names))
-        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
-        for param in model.parameters(): param.requires_grad = False
-        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
+        # 2. Load the state dictionary from your local .pth file
+        state_dict = torch.load(local_weights_path, weights_only=True)
 
-    elif model_name_cfg == "efficientformerv2_s0":
-        model = timm.create_model('efficientformerv2_s0', pretrained=False, num_classes=len(class_names))
-        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
-        for param in model.parameters(): param.requires_grad = False
-        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
-
-    elif model_name_cfg == "levit_192":
-        model = timm.create_model('levit_192', pretrained=False, num_classes=len(class_names))
-        model.load_state_dict(torch.load(local_weights_path, weights_only=True))
-        for param in model.parameters(): param.requires_grad = False
-        for param in model.head.parameters(): param.requires_grad = True # Unfreeze head
+        # 3. Get the name of the final layer (e.g., 'head.weight')
+        classifier_key = model.default_cfg['classifier'] # e.g., 'head' or 'fc'
         
+        # 4. Remove the incompatible final layer weights from the loaded dictionary
+        # This handles cases where the key is 'head.weight', 'fc.weight', etc.
+        keys_to_remove = [k for k in state_dict if k.startswith(classifier_key)]
+        for key in keys_to_remove:
+            del state_dict[key]
+        
+        # 5. Load the modified dictionary into your model.
+        # `strict=False` tells PyTorch it's okay that we're missing the final layer.
+        model.load_state_dict(state_dict, strict=False)
+
+        # 6. Freeze all parameters, then unfreeze the head for training.
+        for param in model.parameters(): param.requires_grad = False
+        # The head is automatically unfrozen because we just created it.
+        # To be explicit, you can unfreeze it again.
+        for param in getattr(model, classifier_key).parameters():
+            param.requires_grad = True
     else:
         raise ValueError(f"Model '{model_name_cfg}' is not supported.")
         
@@ -314,15 +316,26 @@ def main():
             param.requires_grad = True
         logging.info("Unfroze the final stage of Swin Transformer.")
 
-    elif model_name_cfg in ["cvt_13", "coat_lite_mini", "efficientformerv2_s0"]:
+    elif model_name_cfg in ["cvt_13", "efficientformerv2_s0"]:
         # Unfreeze the final stage of the model
         for param in model.stages[-1].parameters():
             param.requires_grad = True
         logging.info(f"Unfroze the final stage of {model_name_cfg}.")
 
+    elif model_name_cfg == "coat_lite_mini":
+        # 1. Unfreeze ALL parameters in the model
+        for param in model.parameters():
+            param.requires_grad = True
+        
+        # 2. Re-freeze the earliest layers (the patch embeddings)
+        # These are the first layers that process the image. It's good to keep them frozen.
+        for param in model.patch_embed1.parameters():
+            param.requires_grad = False
+            
+        logging.info(f"Fine-tuning {model_name_cfg}: Unfroze all layers except patch embeddings.")
+
     # LeViT uses 'blocks'
-    elif 'levit' in model_name_cfg:
-        # Unfreeze the final block of the model
+    elif model_name_cfg in ["levit_192"]:        # Unfreeze the final block of the model
         for param in model.blocks[-1].parameters():
             param.requires_grad = True
         logging.info(f"Unfroze the final block of {model_name_cfg}.")

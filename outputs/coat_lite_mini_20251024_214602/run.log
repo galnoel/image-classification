@@ -1,0 +1,33 @@
+2025-10-24 21:46:02,113 - INFO - Configuration loaded and logging set up.
+2025-10-24 21:46:02,113 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20251024_214602
+2025-10-24 21:46:02,144 - INFO - Using device: cuda
+2025-10-24 21:46:02,144 - INFO - Starting data preparation...
+2025-10-24 21:46:02,180 - INFO - Pre-existing split data found. Skipping data splitting.
+2025-10-24 21:46:02,180 - INFO - Creating PyTorch DataLoaders...
+2025-10-24 21:46:02,239 - INFO - Classes identified: ['Cat', 'Dog']
+2025-10-24 21:46:02,240 - INFO - Using training data from: data_processed/train
+2025-10-24 21:46:02,240 - INFO - Using validation data from: data_processed/test
+2025-10-24 21:46:02,240 - INFO - Data preparation complete. Found classes: ['Cat', 'Dog']
+2025-10-24 21:46:02,242 - INFO - Initializing model: coat_lite_mini
+2025-10-24 21:46:02,499 - INFO - Model 'coat_lite_mini' initialized and moved to 'cuda'.
+2025-10-24 21:46:02,513 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-24 21:46:02,514 - INFO - Loss function and optimizer initialized.
+2025-10-24 21:46:02,514 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-24 21:46:02,516 - INFO - Starting training for 5 epochs...
+2025-10-24 21:47:51,242 - INFO - Epoch: 01 | Train Loss: 0.1123 | Train Acc: 0.9600 | Test Loss: 0.0261 | Test Acc: 0.9932
+2025-10-24 21:47:51,287 - INFO - Model saved to outputs\coat_lite_mini_20251024_214602\best_model.pth
+2025-10-24 21:47:51,287 - INFO - New best model saved to outputs\coat_lite_mini_20251024_214602/best_model.pth (Test Acc: 0.9932)
+2025-10-24 21:49:19,814 - INFO - Epoch: 02 | Train Loss: 0.0832 | Train Acc: 0.9668 | Test Loss: 0.0231 | Test Acc: 0.9934
+2025-10-24 21:49:19,913 - INFO - Model saved to outputs\coat_lite_mini_20251024_214602\best_model.pth
+2025-10-24 21:49:19,914 - INFO - New best model saved to outputs\coat_lite_mini_20251024_214602/best_model.pth (Test Acc: 0.9934)
+2025-10-24 21:53:05,684 - INFO - Epoch: 03 | Train Loss: 0.0798 | Train Acc: 0.9687 | Test Loss: 0.0232 | Test Acc: 0.9924
+2025-10-24 21:57:36,603 - INFO - Epoch: 04 | Train Loss: 0.0849 | Train Acc: 0.9660 | Test Loss: 0.0239 | Test Acc: 0.9922
+2025-10-24 22:00:30,143 - INFO - Epoch: 05 | Train Loss: 0.0791 | Train Acc: 0.9678 | Test Loss: 0.0213 | Test Acc: 0.9926
+2025-10-24 22:00:30,145 - INFO - Training process finished.
+2025-10-24 22:00:30,145 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-24 22:01:43,374 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20251024_214602/confusion_matrix.png
+2025-10-24 22:01:43,376 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-24 22:01:43,378 - INFO - Report saved to outputs\coat_lite_mini_20251024_214602\results_report.pkl
+2025-10-24 22:01:44,049 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20251024_214602/training_curves.png
+2025-10-24 22:01:44,049 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-24 22:01:44,166 - INFO - Loaded best model from Stage 1: outputs\coat_lite_mini_20251024_214602/best_model.pth
