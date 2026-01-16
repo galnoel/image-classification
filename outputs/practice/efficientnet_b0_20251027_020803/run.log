@@ -1,0 +1,4 @@
+2025-10-27 02:08:03,542 - INFO - Configuration loaded and logging set up.
+2025-10-27 02:08:03,542 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251027_020803
+2025-10-27 02:08:05,196 - INFO - Using device: cuda
+2025-10-27 02:08:05,196 - INFO - Starting data preparation...

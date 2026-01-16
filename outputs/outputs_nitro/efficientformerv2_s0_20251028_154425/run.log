@@ -1,0 +1,16 @@
+2025-10-28 15:44:25,248 - INFO - Configuration loaded and logging set up.
+2025-10-28 15:44:25,249 - INFO - All outputs for this run will be saved in: outputs\efficientformerv2_s0_20251028_154425
+2025-10-28 15:44:25,266 - INFO - Using device: cuda
+2025-10-28 15:44:25,267 - INFO - Starting data preparation...
+2025-10-28 15:44:25,315 - INFO - Using training data from: train
+2025-10-28 15:44:25,315 - INFO - Using validation data from: test/data
+2025-10-28 15:44:25,316 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 15:44:25,316 - INFO - Initializing model: efficientformerv2_s0
+2025-10-28 15:45:21,165 - INFO - Configuration loaded and logging set up.
+2025-10-28 15:45:21,165 - INFO - All outputs for this run will be saved in: outputs\efficientformerv2_s0_20251028_154521
+2025-10-28 15:45:21,166 - INFO - Using device: cuda
+2025-10-28 15:45:21,167 - INFO - Starting data preparation...
+2025-10-28 15:45:21,204 - INFO - Using training data from: train
+2025-10-28 15:45:21,204 - INFO - Using validation data from: test/data
+2025-10-28 15:45:21,205 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 15:45:21,205 - INFO - Initializing model: efficientformerv2_s0

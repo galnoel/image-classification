@@ -1,0 +1,14 @@
+2025-10-27 03:13:05,441 - INFO - Configuration loaded and logging set up.
+2025-10-27 03:13:05,453 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251027_031305
+2025-10-27 03:13:07,090 - INFO - Using device: cuda
+2025-10-27 03:13:07,090 - INFO - Starting data preparation...
+2025-10-27 03:13:07,134 - INFO - Using training data from: D:/gemastik/data_clean/clean/train
+2025-10-27 03:13:07,134 - INFO - Using validation data from: D:/gemastik/data_clean/clean/test
+2025-10-27 03:13:07,135 - INFO - Data preparation complete. Found classes: ['0', '1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '3', '4', '5', '6', '7', '8', '9']
+2025-10-27 03:13:07,135 - INFO - Initializing model: efficientnet_b0
+2025-10-27 03:13:07,790 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-27 03:13:07,790 - INFO - Using CrossEntropyLoss.
+2025-10-27 03:13:07,790 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-27 03:13:07,790 - INFO - Loss function and optimizer initialized.
+2025-10-27 03:13:07,790 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-27 03:13:07,790 - INFO - Starting training for 5 epochs...

@@ -1,0 +1,9 @@
+2025-10-25 08:33:22,409 - INFO - Configuration loaded and logging set up.
+2025-10-25 08:33:22,409 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251025_083322
+2025-10-25 08:33:22,569 - INFO - Using device: cuda
+2025-10-25 08:33:22,569 - INFO - Starting data preparation...
+2025-10-25 08:33:22,569 - INFO - No pre-existing split data or incomplete. Starting data preparation...
+2025-10-25 08:33:22,579 - INFO - Collecting files from source directories: ['data/PetImages/Cat', 'data/PetImages/Dog']
+2025-10-25 08:33:22,579 - INFO - Found class: Cat in 'data\PetImages\Cat'
+2025-10-25 08:33:22,643 - INFO - Found class: Dog in 'data\PetImages\Dog'
+2025-10-25 08:33:22,691 - INFO - Splitting combined data (test ratio: 0.2) and copying files...

@@ -1,0 +1,60 @@
+2025-10-27 02:27:30,201 - INFO - Configuration loaded and logging set up.
+2025-10-27 02:27:30,201 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251027_022730
+2025-10-27 02:27:31,839 - INFO - Using device: cuda
+2025-10-27 02:27:31,839 - INFO - Starting data preparation...
+2025-10-27 02:27:31,859 - INFO - Using training data from: D:/gemastik/data_clean/clean/train
+2025-10-27 02:27:31,859 - INFO - Using validation data from: D:/gemastik/data_clean/clean/val
+2025-10-27 02:27:31,859 - INFO - Data preparation complete. Found classes: ['0', '1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '3', '4', '5', '6', '7', '8', '9']
+2025-10-27 02:27:31,859 - INFO - Initializing model: efficientnet_b0
+2025-10-27 02:27:33,044 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-27 02:27:33,044 - INFO - Using CrossEntropyLoss.
+2025-10-27 02:27:33,060 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-27 02:27:33,060 - INFO - Loss function and optimizer initialized.
+2025-10-27 02:27:33,060 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-27 02:27:33,060 - INFO - Starting training for 5 epochs...
+2025-10-27 02:29:09,982 - INFO - Epoch: 01 | Train Loss: 2.5118 | Train Acc: 0.3669 | Test Loss: 1.8951 | Test Acc: 0.7212
+2025-10-27 02:29:10,030 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model.pth
+2025-10-27 02:29:10,030 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model.pth (Test Acc: 0.7212)
+2025-10-27 02:30:29,341 - INFO - Epoch: 02 | Train Loss: 1.6690 | Train Acc: 0.7281 | Test Loss: 1.3458 | Test Acc: 0.7668
+2025-10-27 02:30:29,387 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model.pth
+2025-10-27 02:30:29,402 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model.pth (Test Acc: 0.7668)
+2025-10-27 02:31:49,219 - INFO - Epoch: 03 | Train Loss: 1.2395 | Train Acc: 0.7894 | Test Loss: 1.0862 | Test Acc: 0.7885
+2025-10-27 02:31:49,268 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model.pth
+2025-10-27 02:31:49,281 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model.pth (Test Acc: 0.7885)
+2025-10-27 02:33:09,629 - INFO - Epoch: 04 | Train Loss: 1.0074 | Train Acc: 0.8363 | Test Loss: 0.9044 | Test Acc: 0.8173
+2025-10-27 02:33:09,694 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model.pth
+2025-10-27 02:33:09,694 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model.pth (Test Acc: 0.8173)
+2025-10-27 02:34:30,061 - INFO - Epoch: 05 | Train Loss: 0.8610 | Train Acc: 0.8525 | Test Loss: 0.7951 | Test Acc: 0.8245
+2025-10-27 02:34:30,125 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model.pth
+2025-10-27 02:34:30,126 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model.pth (Test Acc: 0.8245)
+2025-10-27 02:34:30,127 - INFO - Training process finished.
+2025-10-27 02:34:30,127 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-27 02:35:10,747 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251027_022730/confusion_matrix.png
+2025-10-27 02:35:10,747 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-27 02:35:10,747 - INFO - Report saved to outputs\efficientnet_b0_20251027_022730\results_report.pkl
+2025-10-27 02:35:10,970 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251027_022730/training_curves.png
+2025-10-27 02:35:10,970 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-27 02:35:11,075 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20251027_022730/best_model.pth
+2025-10-27 02:35:11,075 - INFO - Unfroze the top layers of EfficientNet for fine-tuning.
+2025-10-27 02:35:11,075 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2025-10-27 02:35:11,075 - INFO - Starting training for 3 epochs...
+2025-10-27 02:36:32,596 - INFO - Epoch: 01 | Train Loss: 0.6148 | Train Acc: 0.8944 | Test Loss: 0.4647 | Test Acc: 0.8870
+2025-10-27 02:36:32,643 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model_finetuned.pth
+2025-10-27 02:36:32,643 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model_finetuned.pth (Test Acc: 0.8870)
+2025-10-27 02:37:55,068 - INFO - Epoch: 02 | Train Loss: 0.3892 | Train Acc: 0.9450 | Test Loss: 0.3463 | Test Acc: 0.9135
+2025-10-27 02:37:55,106 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model_finetuned.pth
+2025-10-27 02:37:55,106 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model_finetuned.pth (Test Acc: 0.9135)
+2025-10-27 02:39:16,343 - INFO - Epoch: 03 | Train Loss: 0.2889 | Train Acc: 0.9537 | Test Loss: 0.2665 | Test Acc: 0.9399
+2025-10-27 02:39:16,394 - INFO - Model saved to outputs\efficientnet_b0_20251027_022730\best_model_finetuned.pth
+2025-10-27 02:39:16,394 - INFO - New best model saved to outputs\efficientnet_b0_20251027_022730/best_model_finetuned.pth (Test Acc: 0.9399)
+2025-10-27 02:39:16,394 - INFO - Training process finished.
+2025-10-27 02:39:16,394 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-27 02:39:56,203 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251027_022730/confusion_matrix_finetuned.png
+2025-10-27 02:39:56,205 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-27 02:39:56,208 - INFO - Report saved to outputs\efficientnet_b0_20251027_022730\results_report_finetuned.pkl
+2025-10-27 02:39:56,416 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251027_022730/training_curves_finetuned.png
+2025-10-27 02:39:56,420 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20251027_022730
+2025-10-27 02:39:56,423 - INFO - ==================================================
+2025-10-27 02:39:56,425 - INFO - PIPELINE EXECUTION COMPLETE
+2025-10-27 02:39:56,425 - INFO - Total duration: 12 minutes and 26 seconds.
+2025-10-27 02:39:56,427 - INFO - ==================================================

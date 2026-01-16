@@ -1,0 +1,90 @@
+2025-10-28 15:44:27,513 - INFO - Configuration loaded and logging set up.
+2025-10-28 15:44:27,514 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20251028_154427
+2025-10-28 15:44:27,514 - INFO - Using device: cuda
+2025-10-28 15:44:27,515 - INFO - Starting data preparation...
+2025-10-28 15:44:27,552 - INFO - Using training data from: C:/gemastik18/data-classification-fix/clean/train
+2025-10-28 15:44:27,552 - INFO - Using validation data from: C:/gemastik18/data-classification-fix/test
+2025-10-28 15:44:27,552 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 15:44:27,552 - INFO - Initializing model: coat_lite_mini
+2025-10-28 15:44:29,082 - INFO - Model 'coat_lite_mini' initialized and moved to 'cuda'.
+2025-10-28 15:44:29,082 - INFO - Using Kornia FocalLoss with params: {'alpha': 0.25, 'gamma': 2.0, 'reduction': 'mean'}
+2025-10-28 15:44:29,082 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-28 15:44:29,082 - INFO - Loss function and optimizer initialized.
+2025-10-28 15:44:29,082 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-28 15:44:29,082 - INFO - Starting training for 5 epochs...
+2025-10-28 15:45:31,230 - INFO - Epoch: 01 | Train Loss: 0.0192 | Train F1: 0.4106 | Test Loss: 0.0122 | Test F1: 0.5821
+2025-10-28 15:45:31,286 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:45:31,286 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.5821)
+2025-10-28 15:46:27,944 - INFO - Epoch: 02 | Train Loss: 0.0106 | Train F1: 0.6191 | Test Loss: 0.0089 | Test F1: 0.6465
+2025-10-28 15:46:27,992 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:46:27,992 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.6465)
+2025-10-28 15:48:37,155 - INFO - Configuration loaded and logging set up.
+2025-10-28 15:48:37,156 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20251028_154837
+2025-10-28 15:48:37,156 - INFO - Using device: cuda
+2025-10-28 15:48:37,157 - INFO - Starting data preparation...
+2025-10-28 15:48:37,200 - INFO - Using training data from: C:/gemastik18/data-classification-fix/clean/train
+2025-10-28 15:48:37,201 - INFO - Using validation data from: C:/gemastik18/data-classification-fix/test
+2025-10-28 15:48:37,201 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 15:48:37,202 - INFO - Initializing model: coat_lite_mini
+2025-10-28 15:48:37,370 - INFO - Model 'coat_lite_mini' initialized and moved to 'cuda'.
+2025-10-28 15:48:37,371 - INFO - Using Kornia FocalLoss with params: {'alpha': 0.25, 'gamma': 2.0, 'reduction': 'mean'}
+2025-10-28 15:48:37,371 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-28 15:48:37,371 - INFO - Loss function and optimizer initialized.
+2025-10-28 15:48:37,371 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-28 15:48:37,371 - INFO - Starting training for 5 epochs...
+2025-10-28 15:49:30,018 - INFO - Epoch: 01 | Train Loss: 0.0189 | Train F1: 0.4152 | Test Loss: 0.0124 | Test F1: 0.5507
+2025-10-28 15:49:30,067 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:49:30,067 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.5507)
+2025-10-28 15:50:22,759 - INFO - Epoch: 02 | Train Loss: 0.0101 | Train F1: 0.6276 | Test Loss: 0.0088 | Test F1: 0.6890
+2025-10-28 15:50:22,806 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:50:22,806 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.6890)
+2025-10-28 15:51:16,812 - INFO - Epoch: 03 | Train Loss: 0.0077 | Train F1: 0.6993 | Test Loss: 0.0072 | Test F1: 0.6978
+2025-10-28 15:51:16,884 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:51:16,885 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.6978)
+2025-10-28 15:52:20,202 - INFO - Epoch: 04 | Train Loss: 0.0065 | Train F1: 0.7388 | Test Loss: 0.0065 | Test F1: 0.7279
+2025-10-28 15:52:20,269 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:52:20,269 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.7279)
+2025-10-28 15:53:15,282 - INFO - Epoch: 05 | Train Loss: 0.0057 | Train F1: 0.7628 | Test Loss: 0.0058 | Test F1: 0.7425
+2025-10-28 15:53:15,351 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model.pth
+2025-10-28 15:53:15,351 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model.pth (Test f1: 0.7425)
+2025-10-28 15:53:15,351 - INFO - Training process finished.
+2025-10-28 15:53:15,351 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-28 15:53:29,774 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20251028_154427/confusion_matrix.png
+2025-10-28 15:53:29,782 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-28 15:53:29,782 - INFO - Report saved to outputs\coat_lite_mini_20251028_154427\results_report.pkl
+2025-10-28 15:53:30,157 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20251028_154427/training_curves.png
+2025-10-28 15:53:30,158 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-28 15:53:30,241 - INFO - Loaded best model from Stage 1: outputs\coat_lite_mini_20251028_154427/best_model.pth
+2025-10-28 15:53:30,242 - INFO - Fine-tuning coat_lite_mini: Unfroze all layers except patch embeddings.
+2025-10-28 15:53:30,243 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2025-10-28 15:53:30,244 - INFO - Starting training for 3 epochs...
+2025-10-28 15:55:45,125 - INFO - Epoch: 01 | Train Loss: 0.0020 | Train F1: 0.8832 | Test Loss: 0.0009 | Test F1: 0.9390
+2025-10-28 15:55:45,174 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model_finetuned.pth
+2025-10-28 15:55:45,174 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model_finetuned.pth (Test f1: 0.9390)
+2025-10-28 15:58:00,268 - INFO - Epoch: 02 | Train Loss: 0.0006 | Train F1: 0.9594 | Test Loss: 0.0006 | Test F1: 0.9659
+2025-10-28 15:58:00,315 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model_finetuned.pth
+2025-10-28 15:58:00,315 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model_finetuned.pth (Test f1: 0.9659)
+2025-10-28 16:00:18,171 - INFO - Epoch: 03 | Train Loss: 0.0003 | Train F1: 0.9815 | Test Loss: 0.0005 | Test F1: 0.9668
+2025-10-28 16:00:18,223 - INFO - Model saved to outputs\coat_lite_mini_20251028_154427\best_model_finetuned.pth
+2025-10-28 16:00:18,224 - INFO - New best model saved to outputs\coat_lite_mini_20251028_154427/best_model_finetuned.pth (Test f1: 0.9668)
+2025-10-28 16:00:18,225 - INFO - Training process finished.
+2025-10-28 16:00:18,226 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-28 16:00:31,959 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20251028_154427/confusion_matrix_finetuned.png
+2025-10-28 16:00:31,959 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-28 16:00:31,966 - INFO - Report saved to outputs\coat_lite_mini_20251028_154427\results_report_finetuned.pkl
+2025-10-28 16:00:32,324 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20251028_154427/training_curves_finetuned.png
+2025-10-28 16:00:32,325 - INFO - All artifacts for the run are saved in: outputs\coat_lite_mini_20251028_154837
+2025-10-28 16:00:32,325 - INFO - ==================================================
+2025-10-28 16:00:32,326 - INFO - PIPELINE EXECUTION COMPLETE
+2025-10-28 16:00:32,327 - INFO - Total duration: 11 minutes and 55 seconds.
+2025-10-28 16:00:32,328 - INFO - ==================================================
+2025-10-28 16:02:46,955 - INFO - Using device: cuda
+2025-10-28 16:02:46,977 - INFO - Loaded class names for mapping: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 16:02:46,984 - INFO - Initializing model architecture: coat_lite_mini
+2025-10-28 16:14:50,032 - INFO - Using device: cuda
+2025-10-28 16:14:50,057 - INFO - Loaded class names for mapping: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 16:14:50,057 - INFO - Initializing model architecture: coat_lite_mini
+2025-10-28 16:14:50,342 - INFO - Loaded trained model weights from C:\gemastik18\image_classification\outputs\coat_lite_mini_20251028_154427\best_model_finetuned.pth
+2025-10-28 16:14:50,342 - INFO - Loading unlabeled data from: C:/gemastik18/data-classification-fix/test
+2025-10-28 16:14:50,363 - INFO - Generating predictions...
+2025-10-28 16:15:24,245 - INFO - Submission file created at: C:\gemastik18\image_classification\outputs\coat_lite_mini_20251028_154427\submission.csv

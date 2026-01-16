@@ -1,0 +1,14 @@
+2025-10-28 15:02:55,595 - INFO - Configuration loaded and logging set up.
+2025-10-28 15:02:55,598 - INFO - All outputs for this run will be saved in: outputs\swin_t_20251028_150255
+2025-10-28 15:02:55,599 - INFO - Using device: cuda
+2025-10-28 15:02:55,600 - INFO - Starting data preparation...
+2025-10-28 15:02:55,655 - INFO - Using training data from: clean/train
+2025-10-28 15:02:55,655 - INFO - Using validation data from: clean/test/data
+2025-10-28 15:02:55,656 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 15:02:55,657 - INFO - Initializing model: swin_t
+2025-10-28 15:02:56,293 - INFO - Model 'swin_t' initialized and moved to 'cuda'.
+2025-10-28 15:02:56,300 - INFO - Using Kornia FocalLoss with params: {'alpha': 0.25, 'gamma': 2.0, 'reduction': 'mean'}
+2025-10-28 15:02:56,300 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-28 15:02:56,300 - INFO - Loss function and optimizer initialized.
+2025-10-28 15:02:56,300 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-28 15:02:56,300 - INFO - Starting training for 5 epochs...

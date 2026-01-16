@@ -1,0 +1,4 @@
+2025-10-28 15:40:19,191 - INFO - Configuration loaded and logging set up.
+2025-10-28 15:40:19,191 - INFO - All outputs for this run will be saved in: outputs\efficientformerv2_s0_20251028_154019
+2025-10-28 15:40:19,192 - INFO - Using device: cuda
+2025-10-28 15:40:19,193 - INFO - Starting data preparation...

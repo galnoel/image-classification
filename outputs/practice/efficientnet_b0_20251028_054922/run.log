@@ -1,0 +1,91 @@
+2025-10-28 05:50:36,737 - INFO - Configuration loaded and logging set up.
+2025-10-28 05:50:36,741 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251028_054922
+2025-10-28 05:50:36,860 - INFO - Using device: cuda
+2025-10-28 05:50:36,861 - INFO - Starting data preparation...
+2025-10-28 05:50:36,885 - INFO - Using training data from: C:\data_\GEMASTIK\dataset_latihan\clean\train
+2025-10-28 05:50:36,887 - INFO - Using validation data from: C:\data_\GEMASTIK\dataset_latihan\clean\test
+2025-10-28 05:50:36,887 - INFO - Data preparation complete. Found classes: ['0', '1', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '3', '4', '5', '6', '7', '8', '9']
+2025-10-28 05:50:36,891 - INFO - Initializing model: efficientnet_b0
+2025-10-28 05:50:37,643 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-28 05:50:37,644 - INFO - Using CrossEntropyLoss.
+2025-10-28 05:50:37,644 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-28 05:50:37,644 - INFO - Loss function and optimizer initialized.
+2025-10-28 05:50:37,654 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-28 05:50:37,656 - INFO - Starting training for 10 epochs...
+2025-10-28 05:51:06,556 - INFO - Epoch: 01 | Train Loss: 2.4819 | Train Acc: 0.4094 | Test Loss: 1.8811 | Test Acc: 0.6971
+2025-10-28 05:51:06,680 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:51:06,680 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.6971)
+2025-10-28 05:51:33,299 - INFO - Epoch: 02 | Train Loss: 1.6569 | Train Acc: 0.7206 | Test Loss: 1.3534 | Test Acc: 0.7812
+2025-10-28 05:51:33,383 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:51:33,384 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.7812)
+2025-10-28 05:51:56,260 - INFO - Epoch: 03 | Train Loss: 1.2377 | Train Acc: 0.8037 | Test Loss: 1.0569 | Test Acc: 0.8101
+2025-10-28 05:51:56,334 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:51:56,334 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8101)
+2025-10-28 05:52:17,463 - INFO - Epoch: 04 | Train Loss: 1.0096 | Train Acc: 0.8331 | Test Loss: 0.8851 | Test Acc: 0.8341
+2025-10-28 05:52:17,529 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:52:17,530 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8341)
+2025-10-28 05:52:38,310 - INFO - Epoch: 05 | Train Loss: 0.8525 | Train Acc: 0.8469 | Test Loss: 0.7979 | Test Acc: 0.8462
+2025-10-28 05:52:38,370 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:52:38,370 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8462)
+2025-10-28 05:52:58,154 - INFO - Epoch: 06 | Train Loss: 0.7520 | Train Acc: 0.8669 | Test Loss: 0.7193 | Test Acc: 0.8486
+2025-10-28 05:52:58,245 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:52:58,247 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8486)
+2025-10-28 05:53:17,778 - INFO - Epoch: 07 | Train Loss: 0.6825 | Train Acc: 0.8856 | Test Loss: 0.6697 | Test Acc: 0.8606
+2025-10-28 05:53:17,848 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:53:17,848 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8606)
+2025-10-28 05:53:36,462 - INFO - Epoch: 08 | Train Loss: 0.6058 | Train Acc: 0.8881 | Test Loss: 0.6119 | Test Acc: 0.8678
+2025-10-28 05:53:36,522 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:53:36,528 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8678)
+2025-10-28 05:53:55,836 - INFO - Epoch: 09 | Train Loss: 0.5527 | Train Acc: 0.9069 | Test Loss: 0.5803 | Test Acc: 0.8750
+2025-10-28 05:53:55,904 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model.pth
+2025-10-28 05:53:55,904 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model.pth (Test Acc: 0.8750)
+2025-10-28 05:54:15,282 - INFO - Epoch: 10 | Train Loss: 0.5236 | Train Acc: 0.9006 | Test Loss: 0.5296 | Test Acc: 0.8750
+2025-10-28 05:54:15,287 - INFO - Training process finished.
+2025-10-28 05:54:15,290 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-28 05:54:20,534 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251028_054922/confusion_matrix.png
+2025-10-28 05:54:20,537 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-28 05:54:20,538 - INFO - Report saved to outputs\efficientnet_b0_20251028_054922\results_report.pkl
+2025-10-28 05:54:20,888 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251028_054922/training_curves.png
+2025-10-28 05:54:20,888 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-28 05:54:21,029 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20251028_054922/best_model.pth
+2025-10-28 05:54:21,029 - INFO - Unfroze the top layers of EfficientNet for fine-tuning.
+2025-10-28 05:54:21,029 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2025-10-28 05:54:21,045 - INFO - Starting training for 15 epochs...
+2025-10-28 05:54:41,231 - INFO - Epoch: 01 | Train Loss: 0.4069 | Train Acc: 0.9244 | Test Loss: 0.3516 | Test Acc: 0.9159
+2025-10-28 05:54:41,287 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model_finetuned.pth
+2025-10-28 05:54:41,287 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model_finetuned.pth (Test Acc: 0.9159)
+2025-10-28 05:55:00,436 - INFO - Epoch: 02 | Train Loss: 0.2793 | Train Acc: 0.9513 | Test Loss: 0.2659 | Test Acc: 0.9423
+2025-10-28 05:55:00,494 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model_finetuned.pth
+2025-10-28 05:55:00,494 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model_finetuned.pth (Test Acc: 0.9423)
+2025-10-28 05:55:20,000 - INFO - Epoch: 03 | Train Loss: 0.2036 | Train Acc: 0.9650 | Test Loss: 0.2115 | Test Acc: 0.9615
+2025-10-28 05:55:20,081 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model_finetuned.pth
+2025-10-28 05:55:20,081 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model_finetuned.pth (Test Acc: 0.9615)
+2025-10-28 05:55:39,289 - INFO - Epoch: 04 | Train Loss: 0.1549 | Train Acc: 0.9744 | Test Loss: 0.1770 | Test Acc: 0.9688
+2025-10-28 05:55:39,345 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model_finetuned.pth
+2025-10-28 05:55:39,345 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model_finetuned.pth (Test Acc: 0.9688)
+2025-10-28 05:55:59,837 - INFO - Epoch: 05 | Train Loss: 0.1181 | Train Acc: 0.9831 | Test Loss: 0.1691 | Test Acc: 0.9615
+2025-10-28 05:56:19,390 - INFO - Epoch: 06 | Train Loss: 0.1071 | Train Acc: 0.9844 | Test Loss: 0.1524 | Test Acc: 0.9639
+2025-10-28 05:56:39,342 - INFO - Epoch: 07 | Train Loss: 0.0942 | Train Acc: 0.9862 | Test Loss: 0.1231 | Test Acc: 0.9760
+2025-10-28 05:56:39,427 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model_finetuned.pth
+2025-10-28 05:56:39,427 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model_finetuned.pth (Test Acc: 0.9760)
+2025-10-28 05:56:58,668 - INFO - Epoch: 08 | Train Loss: 0.0826 | Train Acc: 0.9862 | Test Loss: 0.1165 | Test Acc: 0.9736
+2025-10-28 05:57:17,710 - INFO - Epoch: 09 | Train Loss: 0.0708 | Train Acc: 0.9888 | Test Loss: 0.0995 | Test Acc: 0.9832
+2025-10-28 05:57:17,780 - INFO - Model saved to outputs\efficientnet_b0_20251028_054922\best_model_finetuned.pth
+2025-10-28 05:57:17,780 - INFO - New best model saved to outputs\efficientnet_b0_20251028_054922/best_model_finetuned.pth (Test Acc: 0.9832)
+2025-10-28 05:57:37,142 - INFO - Epoch: 10 | Train Loss: 0.0565 | Train Acc: 0.9944 | Test Loss: 0.0948 | Test Acc: 0.9808
+2025-10-28 05:57:56,906 - INFO - Epoch: 11 | Train Loss: 0.0503 | Train Acc: 0.9944 | Test Loss: 0.0913 | Test Acc: 0.9712
+2025-10-28 05:58:16,915 - INFO - Epoch: 12 | Train Loss: 0.0456 | Train Acc: 0.9962 | Test Loss: 0.0830 | Test Acc: 0.9832
+2025-10-28 05:58:37,258 - INFO - Epoch: 13 | Train Loss: 0.0385 | Train Acc: 0.9956 | Test Loss: 0.0769 | Test Acc: 0.9784
+2025-10-28 05:58:57,217 - INFO - Epoch: 14 | Train Loss: 0.0371 | Train Acc: 0.9956 | Test Loss: 0.0794 | Test Acc: 0.9832
+2025-10-28 05:59:17,340 - INFO - Epoch: 15 | Train Loss: 0.0367 | Train Acc: 0.9962 | Test Loss: 0.0758 | Test Acc: 0.9808
+2025-10-28 05:59:17,342 - INFO - Training process finished.
+2025-10-28 05:59:17,343 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-28 05:59:22,276 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251028_054922/confusion_matrix_finetuned.png
+2025-10-28 05:59:22,276 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-28 05:59:22,280 - INFO - Report saved to outputs\efficientnet_b0_20251028_054922\results_report_finetuned.pkl
+2025-10-28 05:59:22,634 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251028_054922/training_curves_finetuned.png
+2025-10-28 05:59:22,634 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20251028_054922
+2025-10-28 05:59:22,635 - INFO - ==================================================
+2025-10-28 05:59:22,637 - INFO - PIPELINE EXECUTION COMPLETE
+2025-10-28 05:59:22,637 - INFO - Total duration: 9 minutes and 59 seconds.
+2025-10-28 05:59:22,637 - INFO - ==================================================

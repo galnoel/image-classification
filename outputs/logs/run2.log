@@ -1,0 +1,75 @@
+2025-10-28 14:19:43,322 - INFO - Configuration loaded and logging set up.
+2025-10-28 14:19:43,324 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251028_141943
+2025-10-28 14:19:43,326 - INFO - Using device: cuda
+2025-10-28 14:19:43,328 - INFO - Starting data preparation...
+2025-10-28 14:19:43,384 - INFO - Using training data from: clean/train
+2025-10-28 14:19:43,385 - INFO - Using validation data from: clean/test
+2025-10-28 14:19:43,386 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 14:19:43,387 - INFO - Initializing model: efficientnet_b0
+2025-10-28 14:19:43,523 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-28 14:19:43,525 - INFO - Using CrossEntropyLoss.
+2025-10-28 14:19:43,526 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-28 14:19:43,527 - INFO - Loss function and optimizer initialized.
+2025-10-28 14:19:43,527 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-28 14:19:43,527 - INFO - Starting training for 5 epochs...
+2025-10-28 14:20:24,740 - INFO - Epoch: 01 | Train Loss: 2.3187 | Train F1: 0.2842 | Test Loss: 1.7317 | Test F1: 0.4581
+2025-10-28 14:22:53,922 - INFO - Configuration loaded and logging set up.
+2025-10-28 14:22:53,924 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251028_142253
+2025-10-28 14:22:53,925 - INFO - Using device: cuda
+2025-10-28 14:22:53,925 - INFO - Starting data preparation...
+2025-10-28 14:22:53,998 - INFO - Using training data from: clean/train
+2025-10-28 14:22:53,998 - INFO - Using validation data from: clean/test
+2025-10-28 14:22:53,998 - INFO - Data preparation complete. Found classes: ['ba', 'ca', 'da', 'dha', 'ga', 'ha', 'ja', 'ka', 'la', 'ma', 'na', 'nga', 'nya', 'pa', 'ra', 'sa', 'ta', 'tha', 'wa', 'ya']
+2025-10-28 14:22:53,998 - INFO - Initializing model: efficientnet_b0
+2025-10-28 14:22:54,178 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2025-10-28 14:22:54,178 - INFO - Using CrossEntropyLoss.
+2025-10-28 14:22:54,180 - INFO - Using AdamW optimizer with learning rate: 0.001
+2025-10-28 14:22:54,180 - INFO - Loss function and optimizer initialized.
+2025-10-28 14:22:54,180 - INFO - --- Starting Stage 1: Feature Extraction ---
+2025-10-28 14:22:54,180 - INFO - Starting training for 5 epochs...
+2025-10-28 14:23:35,082 - INFO - Epoch: 01 | Train Loss: 2.3140 | Train F1: 0.2927 | Test Loss: 1.7681 | Test F1: 0.4797
+2025-10-28 14:23:35,138 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model.pth
+2025-10-28 14:23:35,145 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model.pth (Test f1: 0.4797)
+2025-10-28 14:24:17,596 - INFO - Epoch: 02 | Train Loss: 1.7975 | Train F1: 0.4363 | Test Loss: 1.4758 | Test F1: 0.5234
+2025-10-28 14:24:17,647 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model.pth
+2025-10-28 14:24:17,648 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model.pth (Test f1: 0.5234)
+2025-10-28 14:25:00,199 - INFO - Epoch: 03 | Train Loss: 1.6239 | Train F1: 0.4692 | Test Loss: 1.3530 | Test F1: 0.5537
+2025-10-28 14:25:00,250 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model.pth
+2025-10-28 14:25:00,251 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model.pth (Test f1: 0.5537)
+2025-10-28 14:25:43,458 - INFO - Epoch: 04 | Train Loss: 1.5480 | Train F1: 0.4832 | Test Loss: 1.2644 | Test F1: 0.5665
+2025-10-28 14:25:43,506 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model.pth
+2025-10-28 14:25:43,507 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model.pth (Test f1: 0.5665)
+2025-10-28 14:26:27,016 - INFO - Epoch: 05 | Train Loss: 1.4795 | Train F1: 0.5029 | Test Loss: 1.2032 | Test F1: 0.5686
+2025-10-28 14:26:27,078 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model.pth
+2025-10-28 14:26:27,086 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model.pth (Test f1: 0.5686)
+2025-10-28 14:26:27,088 - INFO - Training process finished.
+2025-10-28 14:26:27,090 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-28 14:26:35,856 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251028_141943/confusion_matrix.png
+2025-10-28 14:26:35,856 - INFO - Stage 1 (Feature Extraction) complete.
+2025-10-28 14:26:35,863 - INFO - Report saved to outputs\efficientnet_b0_20251028_141943\results_report.pkl
+2025-10-28 14:26:36,149 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251028_141943/training_curves.png
+2025-10-28 14:26:36,150 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2025-10-28 14:26:36,247 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20251028_141943/best_model.pth
+2025-10-28 14:26:36,248 - INFO - Unfroze the top layers of EfficientNet for fine-tuning.
+2025-10-28 14:26:36,250 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2025-10-28 14:26:36,250 - INFO - Starting training for 3 epochs...
+2025-10-28 14:27:24,307 - INFO - Epoch: 01 | Train Loss: 1.1012 | Train F1: 0.6042 | Test Loss: 0.7080 | Test F1: 0.7277
+2025-10-28 14:27:24,363 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model_finetuned.pth
+2025-10-28 14:27:24,363 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model_finetuned.pth (Test f1: 0.7277)
+2025-10-28 14:28:17,530 - INFO - Epoch: 02 | Train Loss: 0.7451 | Train F1: 0.7198 | Test Loss: 0.5141 | Test F1: 0.7824
+2025-10-28 14:28:17,591 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model_finetuned.pth
+2025-10-28 14:28:17,591 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model_finetuned.pth (Test f1: 0.7824)
+2025-10-28 14:29:06,503 - INFO - Epoch: 03 | Train Loss: 0.5934 | Train F1: 0.7756 | Test Loss: 0.4151 | Test F1: 0.8208
+2025-10-28 14:29:06,547 - INFO - Model saved to outputs\efficientnet_b0_20251028_141943\best_model_finetuned.pth
+2025-10-28 14:29:06,547 - INFO - New best model saved to outputs\efficientnet_b0_20251028_141943/best_model_finetuned.pth (Test f1: 0.8208)
+2025-10-28 14:29:06,547 - INFO - Training process finished.
+2025-10-28 14:29:06,547 - INFO - Generating final confusion matrix on the test set with the best model...
+2025-10-28 14:29:15,291 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20251028_141943/confusion_matrix_finetuned.png
+2025-10-28 14:29:15,293 - INFO - Stage 2 (Fine-Tuning) complete.
+2025-10-28 14:29:15,294 - INFO - Report saved to outputs\efficientnet_b0_20251028_141943\results_report_finetuned.pkl
+2025-10-28 14:29:15,572 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20251028_141943/training_curves_finetuned.png
+2025-10-28 14:29:15,574 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20251028_142253
+2025-10-28 14:29:15,574 - INFO - ==================================================
+2025-10-28 14:29:15,574 - INFO - PIPELINE EXECUTION COMPLETE
+2025-10-28 14:29:15,574 - INFO - Total duration: 6 minutes and 21 seconds.
+2025-10-28 14:29:15,574 - INFO - ==================================================

@@ -1,0 +1,10 @@
+2025-10-27 02:08:40,531 - INFO - Configuration loaded and logging set up.
+2025-10-27 02:08:40,531 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20251027_020840
+2025-10-27 02:08:42,156 - INFO - Using device: cuda
+2025-10-27 02:08:42,156 - INFO - Starting data preparation...
+2025-10-27 02:08:42,160 - INFO - No pre-existing split data or incomplete. Starting data preparation...
+2025-10-27 02:08:42,160 - INFO - Cleaning up existing processed data directory: D:\gemastik\data_clean\classification-sign-language
+2025-10-27 02:08:43,858 - INFO - Collecting files from source directories: ['data/PetImages/Cat', 'data/PetImages/Dog']
+2025-10-27 02:08:43,873 - INFO - Found class: Cat in 'data\PetImages\Cat'
+2025-10-27 02:08:43,901 - INFO - Found class: Dog in 'data\PetImages\Dog'
+2025-10-27 02:08:44,031 - INFO - Splitting combined data (test ratio: 0.2) and copying files...
