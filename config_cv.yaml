@@ -1,15 +1,16 @@
 data:
-  labeled_test_dir: from_preprocessor/images/test
-  unlabeled_test_dir: from_preprocessor/images/test
-  source_dirs:
-  - data/PetImages/Cat
-  - data/PetImages/Dog
-  train_dir: data_processed/train
-  test_dir: data_processed/test
+  # labeled_test_dir: from_preprocessor/images/test
+  # unlabeled_test_dir: from_preprocessor/images/test
+  # source_dirs:
+  # - data/PetImages/Cat
+  # - data/PetImages/Dog
+  train_dir: data/histopathologic-oral-cancer/train
+  val_dir: data/histopathologic-oral-cancer/val
+  test_dir: data/histopathologic-oral-cancer/test
   test_split_ratio: 0.2
 # ------------------------------------------------------------------
 model_params:
-  name: "efficientnet_b0"  # CHEATSHEET: Choose your model architecture here.
+  name: "coat_lite_mini"  # CHEATSHEET: Choose your model architecture here.
                             # Options you've implemented:
                             #   - "efficientnet_b0":    Fast and strong baseline. Great first choice.
                             #   - "resnet50":           Classic, reliable workhorse.

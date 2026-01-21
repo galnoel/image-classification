@@ -1,5 +1,7 @@
 # explain.py 
 # python explain.py --model_path outputs/efficientnet_b0_20251023_193354/best_model_finetuned.pth --image_path data_processed/test/Cat/129.jpg
+#python explain.py --model_path outputs/coat_lite_mini_20260118_142653/best_model_finetuned.pth --image_path data/histopathologic-oral-cancer/test/OSCC/OSCC_100x_88.jpg
+
 import torch
 from torch import nn
 from torchvision import models, transforms

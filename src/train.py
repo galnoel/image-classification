@@ -12,8 +12,8 @@ from . import utils
 def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, device, class_names):
     """The main training loop function."""
     results = {
-        "train_loss": [], "train_acc": [],
-        "test_loss": [], "test_acc": []
+        "train_loss": [], "train_acc": [], "train_f1": [],
+        "test_loss": [], "test_acc": [], "test_f1": []
     }
     epochs = cfg['train_params']['epochs']
     model_path = cfg['outputs']['model_path']
@@ -22,14 +22,14 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
 
     logging.info(f"Starting training for {epochs} epochs...")
     for epoch in tqdm(range(epochs), desc="Epochs"):
-        train_loss, train_acc = engine.train_step(
+        train_loss, train_acc, train_f1 = engine.train_step(
             model=model,
             dataloader=train_loader,
             loss_fn=loss_fn,
             optimizer=optimizer,
             device=device
         )
-        test_loss, test_acc = engine.test_step(
+        test_loss, test_acc, test_f1 = engine.test_step(
             model=model,
             dataloader=test_loader,
             loss_fn=loss_fn,
@@ -41,8 +41,8 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
 
         log_message = (
           f"Epoch: {epoch+1:02d} | "
-          f"Train Loss: {train_loss:.4f} | Train Acc: {train_acc:.4f} | "
-          f"Test Loss: {test_loss:.4f} | Test Acc: {test_acc:.4f}"
+          f"Train Loss: {train_loss:.4f} | Train Acc: {train_acc:.4f} | Train F1: {train_f1:.4f} | "
+          f"Test Loss: {test_loss:.4f} | Test Acc: {test_acc:.4f} | Test F1: {test_f1:.4f}"
         )
         if scheduler:
             # Optionally log the current learning rate to see the scheduler working
@@ -51,8 +51,10 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
 
         results["train_loss"].append(train_loss)
         results["train_acc"].append(train_acc)
+        results["train_f1"].append(train_f1)
         results["test_loss"].append(test_loss)
         results["test_acc"].append(test_acc)
+        results["test_f1"].append(test_f1)
 
         # Save the best model based on validation accuracy
         if test_acc > best_test_acc:

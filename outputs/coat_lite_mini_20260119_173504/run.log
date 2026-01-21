@@ -1,0 +1,42 @@
+2026-01-19 17:35:04,796 - INFO - Configuration loaded and logging set up.
+2026-01-19 17:35:04,796 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20260119_173504
+2026-01-19 17:35:06,444 - INFO - Using device: cuda
+2026-01-19 17:35:06,444 - INFO - Starting data preparation...
+2026-01-19 17:35:06,536 - INFO - Using training data from: data/histopathologic-oral-cancer/train
+2026-01-19 17:35:06,536 - INFO - Using validation data from: data/histopathologic-oral-cancer/test
+2026-01-19 17:35:06,536 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-01-19 17:35:06,536 - INFO - Initializing model: coat_lite_mini
+2026-01-19 17:35:07,438 - INFO - Model 'coat_lite_mini' initialized and moved to 'cuda'.
+2026-01-19 17:35:07,438 - INFO - Using CrossEntropyLoss.
+2026-01-19 17:35:07,438 - INFO - Using AdamW optimizer with learning rate: 0.001
+2026-01-19 17:35:07,438 - INFO - Loss function and optimizer initialized.
+2026-01-19 17:35:07,438 - INFO - --- Starting Stage 1: Feature Extraction ---
+2026-01-19 17:35:07,438 - INFO - Starting training for 1 epochs...
+2026-01-19 17:36:53,153 - INFO - Epoch: 01 | Train Loss: 0.4910 | Train Acc: 0.7665 | Train F1: 0.7664 | Test Loss: 0.4539 | Test Acc: 0.7578 | Test F1: 0.7497
+2026-01-19 17:36:53,215 - INFO - Model saved to outputs\coat_lite_mini_20260119_173504\best_model.pth
+2026-01-19 17:36:53,215 - INFO - New best model saved to outputs\coat_lite_mini_20260119_173504/best_model.pth (Test Acc: 0.7578)
+2026-01-19 17:36:53,215 - INFO - Training process finished.
+2026-01-19 17:36:53,215 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-01-19 17:37:27,096 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20260119_173504/confusion_matrix.png
+2026-01-19 17:37:27,096 - INFO - Stage 1 (Feature Extraction) complete.
+2026-01-19 17:37:27,096 - INFO - Report saved to outputs\coat_lite_mini_20260119_173504\results_report.pkl
+2026-01-19 17:37:27,350 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20260119_173504/training_curves.png
+2026-01-19 17:37:27,350 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2026-01-19 17:37:27,407 - INFO - Loaded best model from Stage 1: outputs\coat_lite_mini_20260119_173504/best_model.pth
+2026-01-19 17:37:27,407 - INFO - Fine-tuning coat_lite_mini: Unfroze all layers except patch embeddings.
+2026-01-19 17:37:27,407 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2026-01-19 17:37:27,407 - INFO - Starting training for 1 epochs...
+2026-01-19 17:39:29,233 - INFO - Epoch: 01 | Train Loss: 0.2645 | Train Acc: 0.8835 | Train F1: 0.8833 | Test Loss: 0.2812 | Test Acc: 0.8854 | Test F1: 0.8946
+2026-01-19 17:39:29,293 - INFO - Model saved to outputs\coat_lite_mini_20260119_173504\best_model_finetuned.pth
+2026-01-19 17:39:29,294 - INFO - New best model saved to outputs\coat_lite_mini_20260119_173504/best_model_finetuned.pth (Test Acc: 0.8854)
+2026-01-19 17:39:29,295 - INFO - Training process finished.
+2026-01-19 17:39:29,295 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-01-19 17:40:00,387 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20260119_173504/confusion_matrix_finetuned.png
+2026-01-19 17:40:00,387 - INFO - Stage 2 (Fine-Tuning) complete.
+2026-01-19 17:40:00,387 - INFO - Report saved to outputs\coat_lite_mini_20260119_173504\results_report_finetuned.pkl
+2026-01-19 17:40:00,534 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20260119_173504/training_curves_finetuned.png
+2026-01-19 17:40:00,534 - INFO - All artifacts for the run are saved in: outputs\coat_lite_mini_20260119_173504
+2026-01-19 17:40:00,534 - INFO - ==================================================
+2026-01-19 17:40:00,534 - INFO - PIPELINE EXECUTION COMPLETE
+2026-01-19 17:40:00,534 - INFO - Total duration: 4 minutes and 55 seconds.
+2026-01-19 17:40:00,534 - INFO - ==================================================

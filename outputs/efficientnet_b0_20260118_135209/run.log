@@ -1,0 +1,42 @@
+2026-01-18 13:52:09,314 - INFO - Configuration loaded and logging set up.
+2026-01-18 13:52:09,314 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20260118_135209
+2026-01-18 13:52:09,320 - INFO - Using device: cuda
+2026-01-18 13:52:09,320 - INFO - Starting data preparation...
+2026-01-18 13:52:09,351 - INFO - Using training data from: data/histopathologic-oral-cancer/train
+2026-01-18 13:52:09,351 - INFO - Using validation data from: data/histopathologic-oral-cancer/test
+2026-01-18 13:52:09,351 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-01-18 13:52:09,351 - INFO - Initializing model: efficientnet_b0
+2026-01-18 13:52:09,672 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2026-01-18 13:52:09,672 - INFO - Using CrossEntropyLoss.
+2026-01-18 13:52:09,672 - INFO - Using AdamW optimizer with learning rate: 0.001
+2026-01-18 13:52:09,672 - INFO - Loss function and optimizer initialized.
+2026-01-18 13:52:09,672 - INFO - --- Starting Stage 1: Feature Extraction ---
+2026-01-18 13:52:09,672 - INFO - Starting training for 1 epochs...
+2026-01-18 13:53:55,654 - INFO - Epoch: 01 | Train Loss: 0.4914 | Train Acc: 0.7709 | Test Loss: 0.3995 | Test Acc: 0.7995
+2026-01-18 13:53:55,694 - INFO - Model saved to outputs\efficientnet_b0_20260118_135209\best_model.pth
+2026-01-18 13:53:55,694 - INFO - New best model saved to outputs\efficientnet_b0_20260118_135209/best_model.pth (Test Acc: 0.7995)
+2026-01-18 13:53:55,694 - INFO - Training process finished.
+2026-01-18 13:53:55,694 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-01-18 13:54:30,977 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20260118_135209/confusion_matrix.png
+2026-01-18 13:54:30,977 - INFO - Stage 1 (Feature Extraction) complete.
+2026-01-18 13:54:30,982 - INFO - Report saved to outputs\efficientnet_b0_20260118_135209\results_report.pkl
+2026-01-18 13:54:31,127 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20260118_135209/training_curves.png
+2026-01-18 13:54:31,127 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2026-01-18 13:54:31,197 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20260118_135209/best_model.pth
+2026-01-18 13:54:31,197 - INFO - Unfroze the top layers of EfficientNet for fine-tuning.
+2026-01-18 13:54:31,199 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2026-01-18 13:54:31,199 - INFO - Starting training for 1 epochs...
+2026-01-18 13:56:11,229 - INFO - Epoch: 01 | Train Loss: 0.3315 | Train Acc: 0.8562 | Test Loss: 0.3382 | Test Acc: 0.8151
+2026-01-18 13:56:11,258 - INFO - Model saved to outputs\efficientnet_b0_20260118_135209\best_model_finetuned.pth
+2026-01-18 13:56:11,258 - INFO - New best model saved to outputs\efficientnet_b0_20260118_135209/best_model_finetuned.pth (Test Acc: 0.8151)
+2026-01-18 13:56:11,268 - INFO - Training process finished.
+2026-01-18 13:56:11,268 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-01-18 13:56:48,469 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20260118_135209/confusion_matrix_finetuned.png
+2026-01-18 13:56:48,469 - INFO - Stage 2 (Fine-Tuning) complete.
+2026-01-18 13:56:48,469 - INFO - Report saved to outputs\efficientnet_b0_20260118_135209\results_report_finetuned.pkl
+2026-01-18 13:56:48,611 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20260118_135209/training_curves_finetuned.png
+2026-01-18 13:56:48,611 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20260118_135209
+2026-01-18 13:56:48,611 - INFO - ==================================================
+2026-01-18 13:56:48,611 - INFO - PIPELINE EXECUTION COMPLETE
+2026-01-18 13:56:48,611 - INFO - Total duration: 4 minutes and 39 seconds.
+2026-01-18 13:56:48,611 - INFO - ==================================================

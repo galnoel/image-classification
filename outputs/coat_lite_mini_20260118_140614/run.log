@@ -1,0 +1,54 @@
+2026-01-18 14:06:14,597 - INFO - Configuration loaded and logging set up.
+2026-01-18 14:06:14,597 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20260118_140614
+2026-01-18 14:06:14,607 - INFO - Using device: cuda
+2026-01-18 14:06:14,607 - INFO - Starting data preparation...
+2026-01-18 14:06:14,638 - INFO - Using training data from: data/histopathologic-oral-cancer/train
+2026-01-18 14:06:14,638 - INFO - Using validation data from: data/histopathologic-oral-cancer/test
+2026-01-18 14:06:14,638 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-01-18 14:06:14,638 - INFO - Initializing model: coat_lite_mini
+2026-01-18 14:06:14,852 - INFO - Model 'coat_lite_mini' initialized and moved to 'cuda'.
+2026-01-18 14:06:14,862 - INFO - Using CrossEntropyLoss.
+2026-01-18 14:06:14,862 - INFO - Using AdamW optimizer with learning rate: 0.001
+2026-01-18 14:06:14,862 - INFO - Loss function and optimizer initialized.
+2026-01-18 14:06:14,862 - INFO - --- Starting Stage 1: Feature Extraction ---
+2026-01-18 14:06:14,862 - INFO - Starting training for 5 epochs...
+2026-01-18 14:07:49,102 - INFO - Epoch: 01 | Train Loss: 0.5057 | Train Acc: 0.7576 | Test Loss: 0.4529 | Test Acc: 0.7448
+2026-01-18 14:07:49,181 - INFO - Model saved to outputs\coat_lite_mini_20260118_140614\best_model.pth
+2026-01-18 14:07:49,181 - INFO - New best model saved to outputs\coat_lite_mini_20260118_140614/best_model.pth (Test Acc: 0.7448)
+2026-01-18 14:09:34,497 - INFO - Epoch: 02 | Train Loss: 0.4074 | Train Acc: 0.8179 | Test Loss: 0.4312 | Test Acc: 0.7865
+2026-01-18 14:09:34,564 - INFO - Model saved to outputs\coat_lite_mini_20260118_140614\best_model.pth
+2026-01-18 14:09:34,564 - INFO - New best model saved to outputs\coat_lite_mini_20260118_140614/best_model.pth (Test Acc: 0.7865)
+2026-01-18 14:11:13,273 - INFO - Epoch: 03 | Train Loss: 0.3782 | Train Acc: 0.8409 | Test Loss: 0.4153 | Test Acc: 0.7786
+2026-01-18 14:12:48,313 - INFO - Epoch: 04 | Train Loss: 0.3548 | Train Acc: 0.8488 | Test Loss: 0.3952 | Test Acc: 0.8047
+2026-01-18 14:12:48,360 - INFO - Model saved to outputs\coat_lite_mini_20260118_140614\best_model.pth
+2026-01-18 14:12:48,360 - INFO - New best model saved to outputs\coat_lite_mini_20260118_140614/best_model.pth (Test Acc: 0.8047)
+2026-01-18 14:14:14,920 - INFO - Epoch: 05 | Train Loss: 0.3430 | Train Acc: 0.8541 | Test Loss: 0.4234 | Test Acc: 0.8021
+2026-01-18 14:14:14,920 - INFO - Training process finished.
+2026-01-18 14:14:14,920 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-01-18 14:14:50,108 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20260118_140614/confusion_matrix.png
+2026-01-18 14:14:50,108 - INFO - Stage 1 (Feature Extraction) complete.
+2026-01-18 14:14:50,124 - INFO - Report saved to outputs\coat_lite_mini_20260118_140614\results_report.pkl
+2026-01-18 14:14:50,412 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20260118_140614/training_curves.png
+2026-01-18 14:14:50,412 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2026-01-18 14:14:50,460 - INFO - Loaded best model from Stage 1: outputs\coat_lite_mini_20260118_140614/best_model.pth
+2026-01-18 14:14:50,460 - INFO - Fine-tuning coat_lite_mini: Unfroze all layers except patch embeddings.
+2026-01-18 14:14:50,460 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2026-01-18 14:14:50,460 - INFO - Starting training for 3 epochs...
+2026-01-18 14:17:16,087 - INFO - Epoch: 01 | Train Loss: 0.2453 | Train Acc: 0.8980 | Test Loss: 0.2613 | Test Acc: 0.8880
+2026-01-18 14:17:16,138 - INFO - Model saved to outputs\coat_lite_mini_20260118_140614\best_model_finetuned.pth
+2026-01-18 14:17:16,138 - INFO - New best model saved to outputs\coat_lite_mini_20260118_140614/best_model_finetuned.pth (Test Acc: 0.8880)
+2026-01-18 14:19:45,660 - INFO - Epoch: 02 | Train Loss: 0.0864 | Train Acc: 0.9700 | Test Loss: 0.2606 | Test Acc: 0.9193
+2026-01-18 14:19:45,708 - INFO - Model saved to outputs\coat_lite_mini_20260118_140614\best_model_finetuned.pth
+2026-01-18 14:19:45,708 - INFO - New best model saved to outputs\coat_lite_mini_20260118_140614/best_model_finetuned.pth (Test Acc: 0.9193)
+2026-01-18 14:22:16,002 - INFO - Epoch: 03 | Train Loss: 0.0623 | Train Acc: 0.9780 | Test Loss: 0.3920 | Test Acc: 0.8698
+2026-01-18 14:22:16,002 - INFO - Training process finished.
+2026-01-18 14:22:16,002 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-01-18 14:22:49,239 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20260118_140614/confusion_matrix_finetuned.png
+2026-01-18 14:22:49,239 - INFO - Stage 2 (Fine-Tuning) complete.
+2026-01-18 14:22:49,239 - INFO - Report saved to outputs\coat_lite_mini_20260118_140614\results_report_finetuned.pkl
+2026-01-18 14:22:49,389 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20260118_140614/training_curves_finetuned.png
+2026-01-18 14:22:49,389 - INFO - All artifacts for the run are saved in: outputs\coat_lite_mini_20260118_140614
+2026-01-18 14:22:49,389 - INFO - ==================================================
+2026-01-18 14:22:49,389 - INFO - PIPELINE EXECUTION COMPLETE
+2026-01-18 14:22:49,389 - INFO - Total duration: 16 minutes and 34 seconds.
+2026-01-18 14:22:49,389 - INFO - ==================================================

@@ -16,6 +16,9 @@ import timm
 
 # from focal_loss.focal_loss import FocalLoss 
 from kornia.losses import FocalLoss # <-- Use the Kornia import
+from src import dataloader_factory
+from src.config_aug_fix import AUGMENTATION_CONFIG 
+
 # import wandb
 
 # import os
@@ -76,10 +79,26 @@ def main():
     # 3. Setup device (use GPU if available)
     device = "cuda" if torch.cuda.is_available() else "cpu"
     logging.info(f"Using device: {device}")
-
+    #----------------------------------------------------------
     # 4. Prepare Data: Split, Augment, and Create DataLoaders
+    # logging.info("Starting data preparation...")
+    # train_loader, val_loader, class_names = dataloader_factory.prepare_data(cfg, device)
+    #------------------------------
     logging.info("Starting data preparation...")
-    train_loader, test_loader, class_names = data_setup.prepare_data(cfg, device)
+
+# Get the correct paths from your main config
+    train_dir_path = cfg['data']['train_dir']
+    val_dir_path = cfg['data']['val_dir']
+
+    # Import the augmentation config that the factory function needs
+
+    # Now call the function with the correct arguments
+    train_loader, val_loader, class_names = dataloader_factory.prepare_data(
+        train_dir=train_dir_path,
+        valid_or_test_dir=val_dir_path,
+        cfg=AUGMENTATION_CONFIG,  # Pass the specific augmentation config
+        num_workers=AUGMENTATION_CONFIG['data']['num_workers'] # Pass other params as needed
+    )
 
     logging.info(f"Using training data from: {cfg['data']['train_dir']}")
     logging.info(f"Using validation data from: {cfg['data']['test_dir']}")
@@ -270,7 +289,7 @@ def main():
         cfg=cfg,
         model=model,
         train_loader=train_loader,
-        test_loader=test_loader,
+        test_loader=val_loader,
         loss_fn=loss_fn,
         optimizer=optimizer,
         scheduler=scheduler, # No scheduler for stage 1 in this setup
@@ -366,7 +385,7 @@ def main():
         cfg=cfg,
         model=model,
         train_loader=train_loader,
-        test_loader=test_loader,
+        test_loader=val_loader,
         loss_fn=loss_fn,
         optimizer=optimizer,
         scheduler=scheduler, # No scheduler for stage 2 in this setup

@@ -1,6 +1,7 @@
 # evaluate.py
 
 #python evaluate.py --model_path outputs/efficientnet_b0.../best_model_finetuned.pth --mode eval
+#python evaluate.py --model_path outputs/coat_lite_mini_20260118_142653/best_model_finetuned.pth --mode eval
 
 import torch
 from torch import nn

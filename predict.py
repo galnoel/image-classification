@@ -1,4 +1,3 @@
-# predict.py
 import torch
 from torch import nn
 from torchvision import models, datasets
@@ -9,29 +8,32 @@ import pandas as pd
 from tqdm import tqdm
 import logging
 
-from src import data_setup # Import your data setup functions
+# 1. Import the correct dataloader factory and its config
+from src import dataloader_factory
+from src.config_aug_fix import AUGMENTATION_CONFIG # Make sure this filename is correct
 
 def predict(args):
     """Generates predictions and creates a submission file."""
-    # 1. Load configuration
+    # Load configuration
     with open(args.config, "r") as f:
         cfg = yaml.safe_load(f)
 
-    # 2. Setup logging and device
+    # Setup logging and device
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
     device = "cuda" if torch.cuda.is_available() else "cpu"
     logging.info(f"Using device: {device}")
 
-    # 3. Get class names from the TRAINING data directory
+    # Get class names from the TRAINING data directory
     train_dir = Path(cfg['data']['train_dir'])
-    temp_dataset = datasets.ImageFolder(root=train_dir)
-    class_names = temp_dataset.classes
+    class_names = datasets.ImageFolder(root=train_dir).classes
     logging.info(f"Loaded class names for mapping: {class_names}")
 
-    # 4. Initialize Model Architecture
+    # Initialize Model Architecture
     model_name = cfg['model_params']['name']
     logging.info(f"Initializing model architecture: {model_name}")
 
+    # Note: This block is simplified. For full model support,
+    # you should use the dynamic model creation logic from your run_cv_pipeline.py
     if model_name == "efficientnet_b0":
         model = models.efficientnet_b0(weights=None)
         num_ftrs = model.classifier[1].in_features
@@ -41,32 +43,40 @@ def predict(args):
         num_ftrs = model.fc.in_features
         model.fc = nn.Linear(num_ftrs, len(class_names))
     else:
-        raise ValueError(f"Model '{model_name}' is not supported.")
+        # This will need to be expanded to support your timm models
+        raise ValueError(f"Model '{model_name}' is not supported in this script.")
 
-    # 5. Load the trained weights
+    # Load the trained weights
     model_path = Path(args.model_path)
-    model.load_state_dict(torch.load(model_path, map_location=device))
+    # 2. Add weights_only=True for safety
+    model.load_state_dict(torch.load(model_path, map_location=device, weights_only=True))
     model.to(device)
     model.eval()
     logging.info(f"Loaded trained model weights from {model_path}")
 
-    # 6. Create the submission DataLoader
-    submission_loader = data_setup.create_submission_dataloader(cfg, device)
+    # 3. Create the submission DataLoader using the correct function and arguments
+    unlabeled_images_path = cfg['data']['test_dir']
+    logging.info(f"Loading unlabeled data from: {unlabeled_images_path}")
+    submission_loader = dataloader_factory.create_submission_dataloader(
+        images_dir=unlabeled_images_path,
+        cfg=AUGMENTATION_CONFIG
+    )
 
-    # 7. Generate Predictions
+    # Generate Predictions
     logging.info("Generating predictions...")
     image_ids = []
     predictions = []
     with torch.inference_mode():
-        for images, ids in tqdm(submission_loader, desc="Predicting"):
+        # 4. Correctly unpack the THREE items from the dataloader
+        for images, _, ids in tqdm(submission_loader, desc="Predicting"):
             images = images.to(device)
             outputs = model(images)
-            _, preds = torch.max(outputs, 1)
-            predicted_labels = [class_names[p] for p in preds.cpu().numpy()]
+            _, preds_indices = torch.max(outputs, 1)
+            predicted_labels = [class_names[p] for p in preds_indices.cpu().numpy()]
             image_ids.extend(ids)
             predictions.extend(predicted_labels)
 
-    # 8. Create and Save Submission File
+    # Create and Save Submission File
     submission_df = pd.DataFrame({'id': image_ids, 'label': predictions})
     submission_path = model_path.parent / "submission.csv" # Save in the same run folder
     submission_df.to_csv(submission_path, index=False)
@@ -77,14 +87,14 @@ def predict(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Generate predictions for a competition.")
     parser.add_argument(
-        '--model_path', 
-        type=str, 
-        required=True, 
+        '--model_path',
+        type=str,
+        required=True,
         help="Path to the trained model .pth file from a specific run."
     )
     parser.add_argument(
-        '--config', 
-        type=str, 
+        '--config',
+        type=str,
         default="config_cv.yaml",
         help="Path to the configuration file."
     )

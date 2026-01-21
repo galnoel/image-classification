@@ -11,3 +11,4 @@ env/
 PROJECT_full_processed/
 from_preprocessor/images/
 from_preprocessor/preprocessed_data/
+*.jpg
