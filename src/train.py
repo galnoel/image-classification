@@ -19,6 +19,7 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
     model_path = cfg['outputs']['model_path']
     cm_plot_path = cfg['outputs']['cm_plot_path']
     best_test_acc = -1.0 # Initialize with a low value
+    best_val_loss = float('inf')
 
     logging.info(f"Starting training for {epochs} epochs...")
     for epoch in tqdm(range(epochs), desc="Epochs"):
@@ -57,13 +58,17 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
         results["test_f1"].append(test_f1)
 
         # Save the best model based on validation accuracy
-        if test_acc > best_test_acc:
-            best_test_acc = test_acc
+        # if test_acc > best_test_acc:
+        #     best_test_acc = test_acc
+        #     utils.save_model(model, model_path)
+        #     logging.info(f"New best model saved to {model_path} (Test Acc: {best_test_acc:.4f})")
+        if test_loss < best_val_loss:
+            best_val_loss = test_loss
             utils.save_model(model, model_path)
-            logging.info(f"New best model saved to {model_path} (Test Acc: {best_test_acc:.4f})")
+            logging.info(f"New best model saved to {model_path} (Test Loss: {best_val_loss:.4f})")
 
     logging.info("Training process finished.")
-    
+
     # After training, evaluate on the test set one last time with the best model (optional)
     # Or simply load the best model and run prediction to get final metrics and CM
     logging.info("Generating final confusion matrix on the test set with the best model...")
