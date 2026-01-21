@@ -1,0 +1,13 @@
+2026-01-22 07:28:12,569 - INFO - Configuration loaded and logging set up.
+2026-01-22 07:28:12,569 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20260122_072812
+2026-01-22 07:28:14,190 - INFO - Using device: cuda
+2026-01-22 07:28:14,206 - INFO - Starting data preparation...
+2026-01-22 07:28:14,445 - INFO - Using training data from: data/histopathologic-oral-cancer/train
+2026-01-22 07:28:14,445 - INFO - Using validation data from: data/histopathologic-oral-cancer/test
+2026-01-22 07:28:14,445 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-01-22 07:28:14,445 - INFO - Initializing model: coat_lite_mini
+2026-01-22 07:28:15,364 - INFO - Model 'coat_lite_mini' initialized and moved to 'cuda'.
+2026-01-22 07:28:15,364 - INFO - Using CrossEntropyLoss.
+2026-01-22 07:28:15,364 - INFO - Using AdamW optimizer with learning rate: 0.001
+2026-01-22 07:28:15,364 - INFO - Loss function and optimizer initialized.
+2026-01-22 07:28:15,364 - INFO - --- Starting Stage 1: Feature Extraction ---

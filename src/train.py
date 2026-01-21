@@ -8,6 +8,7 @@ import numpy as np
 
 from . import engine
 from . import utils
+from .early_stopping import EarlyStopping
 
 def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, device, class_names):
     """The main training loop function."""
@@ -18,6 +19,15 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
     epochs = cfg['train_params']['epochs']
     model_path = cfg['outputs']['model_path']
     cm_plot_path = cfg['outputs']['cm_plot_path']
+
+    # Initialize Early Stopping
+    es_params = cfg['train_params'].get('early_stopping', {'patience': 3, 'delta': 0})
+    early_stopping = EarlyStopping(
+        patience=es_params.get('patience', 3),
+        verbose=True,
+        delta=es_params.get('delta', 0),
+        path=model_path
+    )
     best_test_acc = -1.0 # Initialize with a low value
     best_val_loss = float('inf')
 
@@ -62,11 +72,17 @@ def train(cfg, model, train_loader, test_loader, loss_fn, optimizer, scheduler, 
         #     best_test_acc = test_acc
         #     utils.save_model(model, model_path)
         #     logging.info(f"New best model saved to {model_path} (Test Acc: {best_test_acc:.4f})")
-        if test_loss < best_val_loss:
-            best_val_loss = test_loss
-            utils.save_model(model, model_path)
-            logging.info(f"New best model saved to {model_path} (Test Loss: {best_val_loss:.4f})")
+        # if test_loss < best_val_loss:
+        #     best_val_loss = test_loss
+        #     utils.save_model(model, model_path)
+        #     logging.info(f"New best model saved to {model_path} (Test Loss: {best_val_loss:.4f})")
 
+        # Early Stopping check
+        early_stopping(test_loss, model)
+        if early_stopping.early_stop:
+            logging.info("Early stopping triggered. Stopping training.")
+            break
+        
     logging.info("Training process finished.")
 
     # After training, evaluate on the test set one last time with the best model (optional)
