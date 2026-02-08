@@ -1,0 +1,112 @@
+2026-02-05 14:22:43,798 - INFO - Configuration loaded and logging set up.
+2026-02-05 14:22:43,800 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20260205_142243
+2026-02-05 14:22:45,510 - INFO - Using device: cuda
+2026-02-05 14:22:45,511 - INFO - Starting data preparation...
+2026-02-05 14:22:45,827 - INFO - Using training data from: data/histopathologic-oral-cancer/train
+2026-02-05 14:22:45,828 - INFO - Using validation data from: data/histopathologic-oral-cancer/val
+2026-02-05 14:22:45,828 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-02-05 14:22:45,829 - INFO - Initializing model: efficientnet_b0
+2026-02-05 14:22:46,162 - INFO - Model 'efficientnet_b0' initialized and moved to 'cuda'.
+2026-02-05 14:22:46,163 - INFO - Using Kornia FocalLoss with params: {'alpha': 0.25, 'gamma': 2.0, 'reduction': 'mean'}
+2026-02-05 14:22:46,164 - INFO - Using AdamW optimizer with learning rate: 0.001
+2026-02-05 14:22:46,165 - INFO - Loss function and optimizer initialized.
+2026-02-05 14:22:46,165 - INFO - --- Starting Stage 1: Feature Extraction ---
+2026-02-05 14:22:46,166 - INFO - Starting training for 5 epochs...
+2026-02-05 14:25:43,512 - INFO - Epoch: 01 | Train Loss: 0.0288 | Train F1: 0.6685 | Train Acc: 0.6834 | Test Loss: 0.0278 | Test F1: 0.6717 | Test Acc: 0.7266
+2026-02-05 14:25:43,512 - INFO - Validation loss decreased (inf --> 0.027842).  Saving model ...
+2026-02-05 14:27:16,836 - INFO - Epoch: 02 | Train Loss: 0.0252 | Train F1: 0.7389 | Train Acc: 0.7455 | Test Loss: 0.0280 | Test F1: 0.6480 | Test Acc: 0.6745
+2026-02-05 14:27:16,836 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-05 14:28:49,545 - INFO - Epoch: 03 | Train Loss: 0.0243 | Train F1: 0.7526 | Train Acc: 0.7576 | Test Loss: 0.0290 | Test F1: 0.5856 | Test Acc: 0.6250
+2026-02-05 14:28:49,546 - INFO - EarlyStopping counter: 2 out of 3
+2026-02-05 14:30:20,953 - INFO - Epoch: 04 | Train Loss: 0.0242 | Train F1: 0.7571 | Train Acc: 0.7619 | Test Loss: 0.0240 | Test F1: 0.6656 | Test Acc: 0.7240
+2026-02-05 14:30:20,954 - INFO - Validation loss decreased (0.027842 --> 0.024047).  Saving model ...
+2026-02-05 14:31:53,705 - INFO - Epoch: 05 | Train Loss: 0.0238 | Train F1: 0.7675 | Train Acc: 0.7719 | Test Loss: 0.0246 | Test F1: 0.6664 | Test Acc: 0.6875
+2026-02-05 14:31:53,705 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-05 14:31:53,707 - INFO - Training process finished.
+2026-02-05 14:31:53,707 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-02-05 14:32:02,628 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20260205_142243/confusion_matrix.png
+2026-02-05 14:32:02,628 - INFO - Stage 1 (Feature Extraction) complete.
+2026-02-05 14:32:02,628 - INFO - Report saved to outputs\efficientnet_b0_20260205_142243\results_report.pkl
+2026-02-05 14:32:02,816 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20260205_142243/training_curves.png
+2026-02-05 14:32:02,816 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2026-02-05 14:32:02,892 - INFO - Loaded best model from Stage 1: outputs\efficientnet_b0_20260205_142243/best_model.pth
+2026-02-05 14:32:02,893 - INFO - Unfroze the top layers of EfficientNet for fine-tuning.
+2026-02-05 14:32:02,894 - INFO - Created new AdamW optimizer for fine-tuning with learning rate: 5e-05
+2026-02-05 14:32:02,895 - INFO - Starting training for 10 epochs...
+2026-02-05 14:33:37,487 - INFO - Epoch: 01 | Train Loss: 0.0204 | Train F1: 0.8000 | Train Acc: 0.8024 | Test Loss: 0.0234 | Test F1: 0.6922 | Test Acc: 0.7396
+2026-02-05 14:33:37,487 - INFO - Validation loss decreased (inf --> 0.023425).  Saving model ...
+2026-02-05 14:35:09,119 - INFO - Epoch: 02 | Train Loss: 0.0164 | Train F1: 0.8452 | Train Acc: 0.8465 | Test Loss: 0.0236 | Test F1: 0.7272 | Test Acc: 0.7995
+2026-02-05 14:35:09,120 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-05 14:36:43,121 - INFO - Epoch: 03 | Train Loss: 0.0138 | Train F1: 0.8701 | Train Acc: 0.8709 | Test Loss: 0.0250 | Test F1: 0.7272 | Test Acc: 0.7969
+2026-02-05 14:36:43,121 - INFO - EarlyStopping counter: 2 out of 3
+2026-02-05 14:38:16,828 - INFO - Epoch: 04 | Train Loss: 0.0112 | Train F1: 0.8956 | Train Acc: 0.8962 | Test Loss: 0.0225 | Test F1: 0.7499 | Test Acc: 0.8125
+2026-02-05 14:38:16,828 - INFO - EarlyStopping counter: 3 out of 3
+2026-02-05 14:38:16,828 - INFO - Early stopping triggered. Stopping training.
+2026-02-05 14:38:16,835 - INFO - Training process finished.
+2026-02-05 14:38:16,835 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-02-05 14:38:25,551 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20260205_142243/confusion_matrix_finetuned.png
+2026-02-05 14:38:25,551 - INFO - Stage 2 (Fine-Tuning) complete.
+2026-02-05 14:38:25,551 - INFO - Report saved to outputs\efficientnet_b0_20260205_142243\results_report_finetuned.pkl
+2026-02-05 14:38:25,735 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20260205_142243/training_curves_finetuned.png
+2026-02-05 14:38:25,736 - INFO - All artifacts for the run are saved in: outputs\efficientnet_b0_20260205_142243
+2026-02-05 14:38:25,737 - INFO - ==================================================
+2026-02-05 14:38:25,738 - INFO - PIPELINE EXECUTION COMPLETE
+2026-02-05 14:38:25,738 - INFO - Total duration: 15 minutes and 41 seconds.
+2026-02-05 14:38:25,738 - INFO - ==================================================
+2026-02-05 14:40:22,305 - INFO - Loaded class names for mapping: ['Normal', 'OSCC']
+2026-02-05 15:52:53,428 - INFO - Loaded class names for mapping: ['Normal', 'OSCC']
+2026-02-05 15:55:19,905 - INFO - Loaded class names for mapping: ['Normal', 'OSCC']
+2026-02-05 16:01:05,607 - INFO - Loaded class names for mapping: ['Normal', 'OSCC']
+2026-02-05 16:03:54,023 - INFO - Loaded class names for mapping: ['Normal', 'OSCC']
+2026-02-05 16:16:08,544 - WARNING - Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers). Got range [-1.8956583..2.64].
+2026-02-05 16:20:01,198 - WARNING - Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers). Got range [-1.8956583..2.64].
+2026-02-05 16:51:19,333 - INFO - Configuration loaded and logging set up.
+2026-02-05 16:51:19,333 - INFO - All outputs for this run will be saved in: outputs\efficientnet_b0_20260205_165119
+2026-02-05 16:51:19,334 - INFO - Using device: cuda
+2026-02-05 16:51:19,335 - INFO - Starting data preparation...
+2026-02-05 16:51:19,405 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-02-05 16:51:19,406 - INFO - --- Initializing Model for Stage 1 ---
+2026-02-05 16:51:19,689 - INFO - Model 'efficientnet_b0' initialized via Factory.
+2026-02-05 16:51:19,690 - INFO - Freezing base layers for Feature Extraction...
+2026-02-05 16:51:19,694 - INFO - --- Starting Stage 1 Training ---
+2026-02-05 16:51:19,694 - INFO - Starting training for 10 epochs...
+2026-02-05 16:53:33,027 - INFO - Epoch: 01 | Train Loss: 0.0288 | Train F1: 0.6707 | Train Acc: 0.6854 | Test Loss: 0.0262 | Test F1: 0.6320 | Test Acc: 0.6667
+2026-02-05 16:53:33,027 - INFO - Validation loss decreased (inf --> 0.026246).  Saving model ...
+2026-02-05 16:55:40,712 - INFO - Epoch: 02 | Train Loss: 0.0249 | Train F1: 0.7406 | Train Acc: 0.7474 | Test Loss: 0.0244 | Test F1: 0.6717 | Test Acc: 0.7292
+2026-02-05 16:55:40,713 - INFO - Validation loss decreased (0.026246 --> 0.024426).  Saving model ...
+2026-02-05 16:57:46,512 - INFO - Epoch: 03 | Train Loss: 0.0247 | Train F1: 0.7494 | Train Acc: 0.7541 | Test Loss: 0.0249 | Test F1: 0.6555 | Test Acc: 0.7057
+2026-02-05 16:57:46,512 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-05 16:59:50,676 - INFO - Epoch: 04 | Train Loss: 0.0241 | Train F1: 0.7569 | Train Acc: 0.7623 | Test Loss: 0.0309 | Test F1: 0.5906 | Test Acc: 0.5990
+2026-02-05 16:59:50,676 - INFO - EarlyStopping counter: 2 out of 3
+2026-02-05 17:01:54,837 - INFO - Epoch: 05 | Train Loss: 0.0234 | Train F1: 0.7607 | Train Acc: 0.7658 | Test Loss: 0.0278 | Test F1: 0.6739 | Test Acc: 0.6979
+2026-02-05 17:01:54,837 - INFO - EarlyStopping counter: 3 out of 3
+2026-02-05 17:01:54,837 - INFO - Early stopping triggered. Stopping training.
+2026-02-05 17:01:54,840 - INFO - Training process finished.
+2026-02-05 17:01:54,841 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-02-05 17:02:04,546 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20260205_142243/confusion_matrix_finetuned.png
+2026-02-05 17:02:04,547 - INFO - Stage 1 complete.
+2026-02-05 17:02:04,552 - INFO - Report saved to outputs\efficientnet_b0_20260205_142243\results_report.pkl
+2026-02-05 17:02:04,757 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20260205_142243/training_curves.png
+2026-02-05 17:02:04,757 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2026-02-05 17:02:04,897 - INFO - Loaded best Stage 1 model from: outputs\efficientnet_b0_20260205_142243/best_model_finetuned.pth
+2026-02-05 17:02:04,899 - INFO - Unfroze top 3 blocks of EfficientNet.
+2026-02-05 17:02:04,900 - INFO - Starting training for 10 epochs...
+2026-02-05 17:06:16,060 - INFO - Epoch: 01 | Train Loss: 0.0209 | Train F1: 0.7897 | Train Acc: 0.7933 | Test Loss: 0.0195 | Test F1: 0.7378 | Test Acc: 0.7734
+2026-02-05 17:06:16,061 - INFO - Validation loss decreased (inf --> 0.019496).  Saving model ...
+2026-02-05 17:10:30,474 - INFO - Epoch: 02 | Train Loss: 0.0146 | Train F1: 0.8623 | Train Acc: 0.8636 | Test Loss: 0.0221 | Test F1: 0.7759 | Test Acc: 0.8385
+2026-02-05 17:10:30,474 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-05 17:14:45,822 - INFO - Epoch: 03 | Train Loss: 0.0108 | Train F1: 0.9000 | Train Acc: 0.9006 | Test Loss: 0.0208 | Test F1: 0.7954 | Test Acc: 0.8490
+2026-02-05 17:14:45,822 - INFO - EarlyStopping counter: 2 out of 3
+2026-02-05 17:18:57,847 - INFO - Epoch: 04 | Train Loss: 0.0088 | Train F1: 0.9265 | Train Acc: 0.9262 | Test Loss: 0.0196 | Test F1: 0.7954 | Test Acc: 0.8490
+2026-02-05 17:18:57,847 - INFO - EarlyStopping counter: 3 out of 3
+2026-02-05 17:18:57,848 - INFO - Early stopping triggered. Stopping training.
+2026-02-05 17:18:57,849 - INFO - Training process finished.
+2026-02-05 17:18:57,849 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-02-05 17:19:07,479 - INFO - Confusion matrix saved to outputs\efficientnet_b0_20260205_142243/confusion_matrix_finetuned.png
+2026-02-05 17:19:07,479 - INFO - Stage 2 complete.
+2026-02-05 17:19:07,483 - INFO - Report saved to outputs\efficientnet_b0_20260205_142243\results_report_finetuned.pkl
+2026-02-05 17:19:07,671 - INFO - Training curves plot saved to: outputs\efficientnet_b0_20260205_142243/training_curves_finetuned.png
+2026-02-05 17:19:07,671 - INFO - ==================================================
+2026-02-05 17:19:07,671 - INFO - PIPELINE EXECUTION COMPLETE. Duration: 27m 48s
+2026-02-05 17:19:07,671 - INFO - All artifacts saved in: outputs\efficientnet_b0_20260205_165119
+2026-02-05 17:19:07,671 - INFO - ==================================================
