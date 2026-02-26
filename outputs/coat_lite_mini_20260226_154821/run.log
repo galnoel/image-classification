@@ -1,0 +1,53 @@
+2026-02-26 15:48:21,765 - INFO - Configuration loaded and logging set up.
+2026-02-26 15:48:21,766 - INFO - All outputs for this run will be saved in: outputs\coat_lite_mini_20260226_154821
+2026-02-26 15:48:23,437 - INFO - Using device: cuda
+2026-02-26 15:48:23,437 - INFO - Starting data preparation...
+2026-02-26 15:48:23,545 - INFO - Data preparation complete. Found classes: ['Normal', 'OSCC']
+2026-02-26 15:48:23,545 - INFO - --- Initializing Model for Stage 1 ---
+2026-02-26 15:48:24,505 - INFO - Model 'coat_lite_mini' initialized via Factory.
+2026-02-26 15:48:24,505 - INFO - Freezing base layers for Feature Extraction...
+2026-02-26 15:48:24,507 - INFO - --- Starting Stage 1 Training ---
+2026-02-26 15:48:24,507 - INFO - Starting training for 5 epochs...
+2026-02-26 15:51:15,246 - INFO - Epoch: 01 | Train Loss: 0.0252 | Train F1: 0.7234 | Train Acc: 0.7342 | Test Loss: 0.0252 | Test F1: 0.7036 | Test Acc: 0.7370
+2026-02-26 15:51:15,246 - INFO - Validation loss decreased (inf --> 0.025166).  Saving model ...
+2026-02-26 15:52:53,986 - INFO - Epoch: 02 | Train Loss: 0.0212 | Train F1: 0.7807 | Train Acc: 0.7855 | Test Loss: 0.0241 | Test F1: 0.6998 | Test Acc: 0.7578
+2026-02-26 15:52:53,993 - INFO - Validation loss decreased (0.025166 --> 0.024057).  Saving model ...
+2026-02-26 15:54:31,745 - INFO - Epoch: 03 | Train Loss: 0.0201 | Train F1: 0.7986 | Train Acc: 0.8018 | Test Loss: 0.0224 | Test F1: 0.6975 | Test Acc: 0.7448
+2026-02-26 15:54:31,745 - INFO - Validation loss decreased (0.024057 --> 0.022414).  Saving model ...
+2026-02-26 15:56:20,534 - INFO - Epoch: 04 | Train Loss: 0.0190 | Train F1: 0.8102 | Train Acc: 0.8131 | Test Loss: 0.0243 | Test F1: 0.6961 | Test Acc: 0.7292
+2026-02-26 15:56:20,535 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-26 15:58:18,122 - INFO - Epoch: 05 | Train Loss: 0.0186 | Train F1: 0.8164 | Train Acc: 0.8189 | Test Loss: 0.0246 | Test F1: 0.7152 | Test Acc: 0.7708
+2026-02-26 15:58:18,122 - INFO - EarlyStopping counter: 2 out of 3
+2026-02-26 15:58:18,125 - INFO - Training process finished.
+2026-02-26 15:58:18,125 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-02-26 15:58:29,247 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20260226_154821/confusion_matrix.png
+2026-02-26 15:58:29,250 - INFO - Stage 1 complete.
+2026-02-26 15:58:29,251 - INFO - Report saved to outputs\coat_lite_mini_20260226_154821\results_report.pkl
+2026-02-26 15:58:29,528 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20260226_154821/training_curves.png
+2026-02-26 15:58:29,528 - INFO - --- Starting Stage 2: Fine-Tuning ---
+2026-02-26 15:58:29,759 - INFO - Loaded best Stage 1 model from: outputs\coat_lite_mini_20260226_154821/best_model.pth
+2026-02-26 15:58:29,764 - INFO - Unfroze CoaT layers (except patch embeddings).
+2026-02-26 15:58:29,765 - INFO - Starting training for 10 epochs...
+2026-02-26 16:01:09,822 - INFO - Epoch: 01 | Train Loss: 0.0154 | Train F1: 0.8536 | Train Acc: 0.8549 | Test Loss: 0.0184 | Test F1: 0.8181 | Test Acc: 0.8646
+2026-02-26 16:01:09,824 - INFO - Validation loss decreased (inf --> 0.018417).  Saving model ...
+2026-02-26 16:03:55,496 - INFO - Epoch: 02 | Train Loss: 0.0069 | Train F1: 0.9423 | Train Acc: 0.9422 | Test Loss: 0.0246 | Test F1: 0.7884 | Test Acc: 0.8620
+2026-02-26 16:03:55,497 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-26 16:06:38,558 - INFO - Epoch: 03 | Train Loss: 0.0035 | Train F1: 0.9719 | Train Acc: 0.9720 | Test Loss: 0.0168 | Test F1: 0.8695 | Test Acc: 0.8984
+2026-02-26 16:06:38,564 - INFO - Validation loss decreased (0.018417 --> 0.016848).  Saving model ...
+2026-02-26 16:09:35,402 - INFO - Epoch: 04 | Train Loss: 0.0029 | Train F1: 0.9751 | Train Acc: 0.9752 | Test Loss: 0.0252 | Test F1: 0.8231 | Test Acc: 0.8724
+2026-02-26 16:09:35,402 - INFO - EarlyStopping counter: 1 out of 3
+2026-02-26 16:12:26,248 - INFO - Epoch: 05 | Train Loss: 0.0027 | Train F1: 0.9792 | Train Acc: 0.9792 | Test Loss: 0.0277 | Test F1: 0.8333 | Test Acc: 0.8984
+2026-02-26 16:12:26,248 - INFO - EarlyStopping counter: 2 out of 3
+2026-02-26 16:15:02,396 - INFO - Epoch: 06 | Train Loss: 0.0017 | Train F1: 0.9873 | Train Acc: 0.9873 | Test Loss: 0.0211 | Test F1: 0.8044 | Test Acc: 0.8568
+2026-02-26 16:15:02,405 - INFO - EarlyStopping counter: 3 out of 3
+2026-02-26 16:15:02,405 - INFO - Early stopping triggered. Stopping training.
+2026-02-26 16:15:02,405 - INFO - Training process finished.
+2026-02-26 16:15:02,405 - INFO - Generating final confusion matrix on the test set with the best model...
+2026-02-26 16:15:14,070 - INFO - Confusion matrix saved to outputs\coat_lite_mini_20260226_154821/confusion_matrix_finetuned.png
+2026-02-26 16:15:14,070 - INFO - Stage 2 complete.
+2026-02-26 16:15:14,070 - INFO - Report saved to outputs\coat_lite_mini_20260226_154821\results_report_finetuned.pkl
+2026-02-26 16:15:14,365 - INFO - Training curves plot saved to: outputs\coat_lite_mini_20260226_154821/training_curves_finetuned.png
+2026-02-26 16:15:14,365 - INFO - ==================================================
+2026-02-26 16:15:14,365 - INFO - PIPELINE EXECUTION COMPLETE. Duration: 26m 52s
+2026-02-26 16:15:14,365 - INFO - All artifacts saved in: outputs\coat_lite_mini_20260226_154821
+2026-02-26 16:15:14,365 - INFO - ==================================================
